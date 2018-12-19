@@ -56,3 +56,72 @@ export default function Knight() {
   return <span>♘</span>;
 }
 ```
+是的，♘是Unicode字符中的骑士！ 贼帅气。 我们可以把它的颜色当一个属性，然鹅在我们的例子中没黑色骑士，所以没啥必要。
+
+它似乎render的没啥问题，但只是为了保险，我还是改变了我的入口来测试它：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Knight from './Knight';
+
+ReactDOM.render(<Knight />, document.getElementById('root'));
+```
+![](./dndImg/span.png)
+
+每次我处理一个组件时，我都会这样做，所以我总要渲染一些东西。 在一个更大的应用程序中，我会使用像[cosmos](https://github.com/react-cosmos/react-cosmos)这样的component playground，所以我永远不会在黑盒中写组件。
+
+我在屏幕上看到了我的骑士！ 现在是时候开始实现`Square`了。 这是我的第一次尝试：
+```js
+import React from 'react';
+
+export default function Square({black}) {
+  const fill = black ? 'black' : 'white';
+  return <div style={{ backgroundColor: fill }} />;
+}
+```
+
+现在，我改变一下入口代码，来看一下`Knight`在`Square`中是怎样的
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Knight from './Knight';
+import Square from './Square';
+
+ReactDOM.render(
+  <Square black>
+    <Knight />
+  </Square>,
+  document.getElementById('root')
+);
+```
+
+扎心了，啥玩意也没有啊，我其实犯了以下错误：
+- 我忘了给Square大小，所以它高度就会坍塌为0。 我不希望它有任何固定的大小，所以我会给它宽度：'100％'和高度：'100％'来填满容器。
+
+- 我忘了将{children}放在Square返回的div中，所以它忽略了Knight传递给它的内容。
+
+
+即使在纠正了这两个问题之后，当`Square`变黑时我仍然看不到我的骑士。 这是因为默认的页面正文文本颜色是黑色，因此在黑色方块上看不到。 我可以通过给`Knight`一个颜色道具来解决这个问题，但更简单的解决方法是在我设置backgroundColor的t同时设置相应的显示颜色样式。 这个版本的`Square`纠正了错误，并且对两种颜色同样有效：
+
+```js
+import React from 'react';
+
+export default function Square({black, children}) {
+  const fill = black ? 'black' : 'white';
+  const stroke = black ? 'white' : 'black';
+
+  return (
+    <div style={{
+      backgroundColor: fill,
+      color: stroke,
+      width: '100%',
+      height: '100%'
+    }}>
+      {children}
+    </div>
+  );
+}
+```
+![](./dndImg/black.png)
+
