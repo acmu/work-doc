@@ -125,3 +125,162 @@ export default function Square({black, children}) {
 ```
 ![](./dndImg/black.png)
 
+最后，开始写`Board`！ 我将从一个最简单的版本开始，只绘制一个`Square`：
+
+```js
+import React from 'react';
+import Square from './Square';
+import Knight from './Knight';
+
+export default function Board() {
+  return (
+    <div>
+      <Square black>
+        <Knight />
+      </Square>
+    </div>
+  );
+}
+```
+目前，我唯一的目的是让它render，以便我可以开始调试它：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Board from './Board';
+
+ReactDOM.render(
+  <Board knightPosition={[0, 0]} />,
+  document.getElementById('root')
+);
+```
+
+的确，我可以看到一个方块。 我现在要添加所有的方块！ 但我应该从哪里开始？ 我应该把render放哪？for循环？ 或数组的map？
+
+讲真，我其实现在也不用考虑这个。 我已经知道如何渲染一个有骑士或没有骑士的方格。 由于knightPosition props，我也知道了骑士的位置。 这样我就可以写一个renderSquare方法，而不用担心怎么渲染整个`Board`。
+
+我的第一版 renderSquare 方法如下：
+
+```js
+function renderSquare(x, y, [knightX, knightY]) {
+  const black = (x + y) % 2 === 1;
+  const isKnightHere = knightX === x && knightY === y
+  const piece = isKnightHere ? <Knight /> : null;
+
+  return (
+    <Square black={black}>
+      {piece}
+    </Square>
+  );
+}
+```
+
+我可以改变`Board`的render来写几个`Square`
+
+```js
+export default function Board({ knightPosition }) {
+  return (
+    <div style={{
+      width: '100%',
+      height: '100%'
+    }}>
+      {renderSquare(0, 0, knightPosition)}
+      {renderSquare(1, 0, knightPosition)}
+      {renderSquare(2, 0, knightPosition)}
+    </div>
+  );
+}
+```
+
+![img](./dndImg/white.png)
+
+现在，我发现我没有给方块任何布局。 那让我们来用Flex布局吧。 我在根div中添加了一些样式，并将Squares包装在div中，这样我就可以将它们展开了。 通常，保持组件的封装性并使它们的布局对外无感知是个好写法，即使要添加div来包裹。
+
+```js
+import React from 'react';
+import Square from './Square';
+import Knight from './Knight';
+
+function renderSquare(i, [knightX, knightY]) {
+  const x = i % 8;
+  const y = Math.floor(i / 8);
+  const isKnightHere = (x === knightX && y === knightY)
+  const black = (x + y) % 2 === 1;
+  const piece = isKnightHere ? <Knight /> : null;
+
+  return (
+    <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+      <Square black={black}>
+        {piece}
+      </Square>
+    </div>
+  );
+}
+
+export default function Board({knightPosition}) {
+  const squares = [];
+  for (let i = 0; i < 64; i++) {
+    squares.push(this.renderSquare(i, knightPosition));
+  }
+
+  return (
+    <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexWrap: 'wrap'
+    }}>
+      {squares}
+    </div>
+  );
+}
+```
+![img](./dndImg/square.png)
+
+
+这看起来很酷！ 但我现在不知道如何保持`Board`方形宽高比，但这很容易在以后添加。
+
+我们从什么都没有，到现在能够通过改变knightPosition将骑士移动到棋盘其他位置：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Board from './Board';
+
+ReactDOM.render(
+  <Board knightPosition={[7, 4]} />,
+  document.getElementById('root')
+);
+```
+![img](./dndImg/position.png)
+
+声明式（declarativeness）写法太爽了！这就是人们为什么喜欢用React的原因
+
+
+## 添加State
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![img](./dndImg/)
+`Knight`
+`Square`
+`Board`
+```js
+
+```
