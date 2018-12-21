@@ -1,12 +1,14 @@
 # Tutorial
 
-你已经阅读了Overview，现在开始我们的冒险！ 即使你没有阅读，也是不妨碍我们的，因为我们 2/3 的时间将忙于识别和构建正常的React组件，就像 Thinking in React 教程中一样。 添加拖放支持只是锦上添花。
+> 译者注：小弟才疏学浅，错误在所难免，欢迎赐教。
 
-在本教程中，我们将使用React和React DnD构建一个Chess游戏。 这当然是不可能的啦！编写一个完整的国际象棋游戏完全超出了本教程的范围。 我们要构建的是一个带棋盘和一个骑士的小应用程序。 根据国际象棋规则，骑士可以被拖拽。
+你已经阅读了 [Overview](http://react-dnd.github.io/react-dnd/docs/overview)  [中文Overview地址](https://github.com/AnHongpeng/react-dnd-in-chinese/blob/master/docs/quickStart/overview.md)（译者在GitHub上看到的），现在开始我们的冒险！ 即使你没有阅读，也是不妨碍我们的，因为我们 2/3 的时间将忙于识别和构建正常的React组件，就像 Thinking in React 教程中一样。 添加拖放支持只是锦上添花。
+
+在本教程中，我们将使用React和React DnD构建一个Chess游戏。 这当然是不可能的啦！编写一个完整的国际象棋游戏完全超出了本教程的范围。 **我们要构建的是一个带棋盘和一个骑士小应用, 根据国际象棋规则，骑士可以被拖拽。**
 
 我们将使用此示例来演示React DnD的数据驱动方法。 您将学习如何创建拖动源（drag source）和放置目标（drop target），将它们与组件连接在一起，并根据拖放事件更改其外观。
 
-如果您是对React只有一点了解的新手，但是必须获得构建组件的一些经验，本教程还可以作为React思维模式和React工作流程的介绍。 如果您是经验丰富的React开发人员，并且只是来到拖放部分，您可以直接阅读本教程的第三部分和最后一部分。
+如果您是对React只有一点了解的新手，但是必须获得构建组件的一些经验，本教程还可以作为React思维模式和React工作流程的介绍。 **如果您是经验丰富的React开发人员，并且只是来到拖放部分，您可以直接阅读本教程的第三部分和最后一部分。**
 
 闲话少说！ 是时候为我们的小项目设置构建工作流程了。 我使用Webpack，你可能使用Browserify。我现在并不想讨论这个，所以只要能以方便的方式创建一个空的React项目即可。 如果你觉得麻烦，你当然也可以克隆[React Hot Boilerplate](https://github.com/gaearon/react-hot-boilerplate)并在它上面工作。 其实，这就是我将要做的事情。
 
@@ -259,13 +261,142 @@ ReactDOM.render(
 
 ## 添加State
 
+我们想让 `Knight` 可以拖拽。 为了实现这一点，我们需要的是将当前的`knightPosition` 保持在某种状态存储中，并有一些方法来改变它。
+
+因为设置这个 `state` 需要一些思考，所以我们不会同时实现拖动。 相反，我们将从更简单的实现开始。 只要你点击一个特定的 `Square` 时，我们会移动 `Knight` ，但前提是这符合国际象棋规则。 实现这个之后，可以给我们足够的想法来管理 `state` ，所以接着我们可以用拖放替换点击。
+
+React并不反对数据管理或数据流; 你可以使用 [Flux](https://facebook.github.io/flux/) ，[Redux](https://github.com/reduxjs/react-redux) ，[Rx](https://github.com/Reactive-Extensions/RxJS) 等，避免使模型臃肿并将读写分离。
+
+我不想因为这个简单的例子，来安装或设置Redux给我们带来麻烦，所以我将遵循一个更简单的模式。 它不会像Redux一样可扩展，但我也不需要它。 我还没有确定我的状态管理器的API，但是我将其称为Game，它肯定需要一些方法来向我的React代码发送信号，更改数据。
+
+由于我知道这一点，我可以用一个尚不存在的假想 `Game` 重写我的 `index.js` 。 请注意，这一次，我是在盲目写代码，它还无法运行。 这是因为我还在考虑API：
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Board from './Board';
+import { observe } from './Game';
+
+const root = document.getElementById('root');
+
+observe(knightPosition =>
+  ReactDOM.render(
+    <Board knightPosition={knightPosition} />,
+    root
+  )
+);
+```
+
+我import的 `observe` 是干嘛的呀？这只是我能想到的用来订阅变化 `state` 的最小方法。 我虽然可以把它变成一个 `EventEmitter` ，但我需要的只是一个简单的变化事件，那为什么还要怎么做呢？ 我本可以让 `Game` 成为一个对象模型，但我需要的只是一个数据流，所以这也没有必要。
+
+为了验证这个订阅API的意义，让我们写一个发布随机位置的代码：
+```js
+export function observe(receive) {
+  setInterval(() => receive([
+    Math.floor(Math.random() * 8),
+    Math.floor(Math.random() * 8)
+  ]), 500);
+}
+```
+
+> 译者注：这块代码写的好神奇，先是定义了一个函数 `observe` 这个函数有一个参数，之后 `index.js` 中调用 `observe` 传进去的参数是一个函数，这时会执行 `observe` ，接着调用传进来的参数（其实是一个函数），并给这个参数一个参数（是2个值的数组）最后就会每500ms调用 `ReactDOM.render` 来生成图像。
+
+回到render完成的Game中，看起来真不错！
 
 
+![img](./dndImg/random.gif)
+
+但很明显，这没啥用。如果我们想要一些交互，就要能在我们的组件中去修改 `Game` 的state。
+
+现在，我保持简单并暴露一个直接修改内部状态的 `moveKnight` 函数。 在中等复杂的应用中，这样做不是很好，因为不同的state存储可能会被响应单个用户操作更新而影响，但在我们的情况下，这就足够了：
+
+```js
+let knightPosition = [0, 0];
+let observer = null;
+
+function emitChange() {
+  observer(knightPosition);
+}
+
+export function observe(o) {
+  if (observer) {
+    throw new Error('Multiple observers not implemented.');
+  }
+
+  observer = o;
+  emitChange();
+}
+
+export function moveKnight(toX, toY) {
+  knightPosition = [toX, toY];
+  emitChange();
+}
+```
+
+现在，回到我们的组件。 此时的目标是将 `Knight` 移动到被点击的 `Square` 。 一种方法是在 Square 中调用 moveKnight 。 但是，这需要让我们把 `Knight` 的位置传递给 `Square` 。 下面有一个更好的办法：
+
+> 如果一个组件为了渲染不需要使用state，那么他根本就不需要state
+
+`Square` 不需要知道 `Knight` 的位置，因此最好避免把 `moveKnight` 方法耦合到 `Square` 中，所以我们给包裹 `Square` 的 `div` 添加一个 `onClick` handler，而不是给 `Board` 加。
 
 
+```js
+import React from 'react';
+import Square from './Square';
+import Knight from './Knight';
+import { moveKnight } from './Game';
 
+/* ... */
 
+renderSquare(i, knightPosition) {
+  /* ... */
+  return (
+    <div onClick={() => this.handleSquareClick(x, y)}>
+      {/* ... */}
+    </div>
+  );
+}
 
+handleSquareClick(toX, toY) {
+  moveKnight(toX, toY);
+}
+```
+我们本可以在 `Square` 上添加一个 `onClick` props并使用它，但是因为我们要在以后删除点击处理程序以支持拖放界面，那为什么还要麻烦一次呢？
+
+现在最后剩下的部分是国际象棋规则检查。 骑士不能任意移动，只允许进行L形移动。 那么向游戏中添加一个 `canMoveKnight(toX，toY)` 函数，并将初始位置更改为A2以匹配规则：
+
+```js
+let knightPosition = [1, 7];
+
+/* ... */
+
+export function canMoveKnight(toX, toY) {
+  const [x, y] = knightPosition;
+  const dx = toX - x;
+  const dy = toY - y;
+
+  return (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
+         (Math.abs(dx) === 1 && Math.abs(dy) === 2);
+}
+```
+
+最后，在move之前，我要检查一下：
+
+```js
+import { canMoveKnight, moveKnight } from './Game';
+
+/* ... */
+
+handleSquareClick(toX, toY) {
+  if (canMoveKnight(toX, toY)) {
+    moveKnight(toX, toY);
+  }
+}
+```
+
+![img](./dndImg/click.gif)
+
+现在这样，真好！
 
 
 
