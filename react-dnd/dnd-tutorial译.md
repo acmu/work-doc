@@ -1,8 +1,8 @@
 # Tutorial
 
-> 译者注：小弟才疏学浅，错误在所难免，欢迎赐教。
+> 译者注：小弟才疏学浅，错误在所难免，欢迎PR
 
-你已经阅读了 [Overview](http://react-dnd.github.io/react-dnd/docs/overview)  [中文Overview地址](https://github.com/AnHongpeng/react-dnd-in-chinese/blob/master/docs/quickStart/overview.md)（译者在GitHub上看到的），现在开始我们的冒险！ 即使你没有阅读，也是不妨碍我们的，因为我们 2/3 的时间将忙于识别和构建正常的React组件，就像 Thinking in React 教程中一样。 添加拖放支持只是锦上添花。
+你已经阅读了 [Overview](http://react-dnd.github.io/react-dnd/docs/overview)，现在开始我们的冒险！ 即使你没有阅读，也是不妨碍我们的，因为我们 2/3 的时间将忙于识别和构建正常的React组件，就像 Thinking in React 教程中一样。 添加拖放支持只是锦上添花。
 
 在本教程中，我们将使用React和React DnD构建一个Chess游戏。 这当然是不可能的啦！编写一个完整的国际象棋游戏完全超出了本教程的范围。 **我们要构建的是一个带棋盘和一个骑士小应用, 根据国际象棋规则，骑士可以被拖拽。**
 
@@ -396,7 +396,7 @@ handleSquareClick(toX, toY) {
 
 ![img](./dndImg/click.gif)
 
-现在这样，真好！
+这种感觉，真好！
 
 
 
