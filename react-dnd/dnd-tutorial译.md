@@ -38,7 +38,7 @@
 因此它可能拥有Squares。（ Therefore it probably owns the Squares.）
 
  但是，它还需要拥有`Knight`，因为`Knight`需要被放置在其中一个`Square`中。 这意味着`Board`需要知道`Knight`的当前位置。 在一个真正的国际象棋游戏中，`Board`将接受描述所有部分，颜色和位置的数据结构，但对我们来说，一个knightPosition props就够了。 我们将使用二维数组作为坐标，[0,0]指的是A8位置。 为什么是A8而不是A1？ 因为可以匹配浏览器坐标方向。 我用A1试了一下，感觉又掉了好几根头发。
- ![A8chess](./dndImg/a8.png)
+ ![A8chess](./img/a8.png)
 
 
 
@@ -69,7 +69,7 @@ import Knight from './Knight';
 
 ReactDOM.render(<Knight />, document.getElementById('root'));
 ```
-![](./dndImg/span.png)
+![](./img/span.png)
 
 每次我处理一个组件时，我都会这样做，所以我总要渲染一些东西。 在一个更大的应用程序中，我会使用像[cosmos](https://github.com/react-cosmos/react-cosmos)这样的component playground，所以我永远不会在黑盒中写组件。
 
@@ -125,7 +125,7 @@ export default function Square({black, children}) {
   );
 }
 ```
-![](./dndImg/black.png)
+![](./img/black.png)
 
 最后，开始写`Board`！ 我将从一个最简单的版本开始，只绘制一个`Square`：
 
@@ -194,7 +194,7 @@ export default function Board({ knightPosition }) {
 }
 ```
 
-![img](./dndImg/white.png)
+![img](./img/white.png)
 
 现在，我发现我没有给方块任何布局。 那让我们来用Flex布局吧。 我在根div中添加了一些样式，并将Squares包装在div中，这样我就可以将它们展开了。 通常，保持组件的封装性并使它们的布局对外无感知是个好写法，即使要添加div来包裹。
 
@@ -237,7 +237,7 @@ export default function Board({knightPosition}) {
   );
 }
 ```
-![img](./dndImg/square.png)
+![img](./img/square.png)
 
 
 这看起来很酷！ 但我现在不知道如何保持`Board`方形宽高比，但这很容易在以后添加。
@@ -254,7 +254,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-![img](./dndImg/position.png)
+![img](./img/position.png)
 
 声明式（declarativeness）写法太爽了！这就是人们为什么喜欢用React的原因
 
@@ -304,7 +304,7 @@ export function observe(receive) {
 回到render完成的Game中，看起来真不错！
 
 
-![img](./dndImg/random.gif)
+![img](./img/random.gif)
 
 但很明显，这没啥用。如果我们想要一些交互，就要能在我们的组件中去修改 `Game` 的state。
 
@@ -394,7 +394,7 @@ handleSquareClick(toX, toY) {
 }
 ```
 
-![img](./dndImg/click.gif)
+![img](./img/click.gif)
 
 这种感觉，真好！
 
@@ -505,7 +505,7 @@ function Knight({ connectDragSource, isDragging }) {
 
 export default DragSource(ItemTypes.KNIGHT, knightSource, collect)(Knight);
 ```
-![img](./dndImg/move.gif)
+![img](./img/move.gif)
 
 `Knight` 现在是一个拖拽源，但是还没有放置目标来处理放置。 我们现在要把 `Square` 作为目标。
 
@@ -636,7 +636,7 @@ function BoardSquare({ x, y, connectDropTarget, isOver, children }) {
 export default DropTarget(ItemTypes.KNIGHT, squareTarget, collect)(BoardSquare);
 ```
 
-![img](./dndImg/yellow.gif)
+![img](./img/yellow.gif)
 
 
 这看起来已经很不错了！ 完成本教程只剩下一个步骤了。 我们想要突出显示代表有效移动的 `BoardSquare` ，并且只有当它发生在其中一个有效的 `BoardSquare` 上时才放置。
@@ -714,7 +714,7 @@ export default DropTarget(ItemTypes.KNIGHT, squareTarget, collect)(BoardSquare);
 ```
 
 
-![img](./dndImg/valid.gif)
+![img](./img/valid.gif)
 
 ## Final Touches
 
@@ -749,7 +749,7 @@ componentDidMount() {
 享受拖放带来的乐趣吧！
 
 
-![img](./dndImg/finish.gif)
+![img](./img/finish.gif)
 
 
 
