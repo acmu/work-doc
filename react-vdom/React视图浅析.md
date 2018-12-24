@@ -173,44 +173,22 @@ var FLUSH_BATCHED_UPDATES = {
 这里就是调用了上面的 `enqueueUpdate` 。
 
 
+我们可以看一下这2中执行setState方法的调用栈是怎么样的：
 
 
+![img](./img/6.png)
 
+![img](./img/7.png)
 
+![img](./img/8.png)
 
+可以看到， setTimeout 时，它的代码在另一个调用栈中，即在 event queue 中，那么他们的上下文环境就不同。
 
+因为在 普通调用 `setState` 时， `batchingStrategy` 的 `isBatchingUpdates` 已经被设为 true，所以两次 `setState` 的结果并没有立即生效，而是被放进 了 `dirtyComponents` 中。这也解释了两次打印都是 60 的原因，因为新的 state 还没有被应用到组件中
 
+而 setTimeout 中 的 两 次 `setState` ， 因 为 没 有 前 置 的 `batchedUpdate` 调 用 ， 所 以 `batchingStrategy` 的 `isBatchingUpdates` 标志位是 false，也就导致了新的 state 马上生效，没有 走到 `dirtyComponents` 分支
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-我们输出 `isBatchingUpdates` 的值看一下，
+我们可以输出 `isBatchingUpdates` 的值看一下，验证一下我们的想法
 
 ```js
 function enqueueUpdate(component) {
@@ -232,82 +210,120 @@ function enqueueUpdate(component) {
 ![img](./img/3.png)
 
 
-
-
-
-
-
-
-```js
-
-```
-
-
-
-
-```js
-
-```
-
-
-
-
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+那么 `setState` 的介绍就到这里，接下来我们看 `virtual dom`。
 
 
 ## 二：Virtual DOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```js
+
+```
+
+
+
+
+```js
+
+```
+
+
+
+
+
+
+
+
+
+```js
+
+```
+
+
+
+
+
+
+
+
+```js
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 三：Diff 算法
 zmy-3中diff 结合
