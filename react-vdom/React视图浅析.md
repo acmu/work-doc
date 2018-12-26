@@ -4,14 +4,14 @@
 
 这里我主要介绍三部分内容。
 
-## 一：setSate异步更新
+## 一：setState异步更新
 
 zmy-log 截图
 
 state 是 React 中重要的概念。React 是通过管理状态来实现对组件的管理。它通过 this.state 来访问 state，通过 this.setState() 方法来更新 state。当this.setState() 被调用的时候，React 会重新调用 render 方法来重新渲染 UI。
-setState 虽然已经是我们很熟悉的 API，但你真的了解它吗?比如为什么不能用 `this.state.val` 来更新state呢？接下来就让我们探索一下setState的更新机制。
+setState 虽然已经是我们很熟悉的 API，但你真的了解它吗?比如为什么不能用 `this.state.val` 来更新state呢？接下来就让我们探索一下setState的更新机制。
 
-首先如果你用 `this.state.val` 来更新state，那这其实是不会重新render的，再者，正常state更新是加入一个队列，之后在某段时刻，批量更新，
+首先如果你用 `this.state.val` 来更新state，那这其实是不会重新render的，再者，正常state更新是加入一个队列，之后在某段时刻，批量更新，
 
 ![img](./img/queue.png)
 
@@ -89,7 +89,7 @@ function enqueueUpdate(component) {
 }
 ```
 
-`enqueueUpdate` 调用了 `batchedUpdates`，那继续看下它的源码
+`enqueueUpdate` 调用了 `batchedUpdates`，那继续看下它的源码
 
 
 ```js
@@ -107,7 +107,7 @@ batchedUpdates: function (callback, a, b, c, d, e) {
 }
 ```
 
-这里调用了 `transaction.perform()` 这个是干什么的呢，其实他是 React 中的事务（这个事务和数据库中的事务可不一样）。事务就是将需要执行的方法使用 `wrapper` 封装起来，再通过事务提供的 `perform` 方法执行。 而在 `perform` 之前，先执行所有 `wrapper` 中的 `initialize` 方法，执行完 `perform` 之后(即执行 `method` 方法后)再执行所有的 `close` 方法。一组 `initialize` 及 `close` 方法称为一个 `wrapper` 。从图中可以看出，事务支持多个 `wrapper` 叠加。
+这里调用了 `transaction.perform()` 这个是干什么的呢，其实他是 React 中的事务（这个事务和数据库中的事务可不一样）。事务就是将需要执行的方法使用 `wrapper` 封装起来，再通过事务提供的 `perform` 方法执行。 而在 `perform` 之前，先执行所有 `wrapper` 中的 `initialize` 方法，执行完 `perform` 之后(即执行 `method` 方法后)再执行所有的 `close` 方法。一组 `initialize` 及 `close` 方法称为一个 `wrapper` 。从图中可以看出，事务支持多个 `wrapper` 叠加。
 
 ![img](./img/4.png)
 
@@ -119,24 +119,24 @@ batchedUpdates: function (callback, a, b, c, d, e) {
 var Transaction = require('./Transaction');
 // 我们自己定义的事务
 var MyTransaction = function () {
-  // ... };
-  Object.assign(MyTransaction.prototype, Transaction.Mixin, {
-    getTransactionWrappers: function () {
-      return [{
-        initialize: function () {
-          console.log('before method perform');
-        },
-        close: function () {
-          console.log('after method perform');
-        }
-      }];
-    };
-  });
-  var transaction = new MyTransaction(); var testMethod = function () {
-    console.log('test');
+  // ...
+};
+Object.assign(MyTransaction.prototype, Transaction.Mixin, {
+  getTransactionWrappers: function () {
+    return [{
+      initialize: function () {
+        console.log('before method perform');
+      },
+      close: function () {
+        console.log('after method perform');
+      }
+    }];
   }
-  transaction.perform(testMethod);
+});
+var transaction = new MyTransaction(); var testMethod = function () {
+  console.log('test');
 }
+transaction.perform(testMethod);
 // 打印的结果如下:
 // before method perform // test
 // after method perform
@@ -182,7 +182,7 @@ var FLUSH_BATCHED_UPDATES = {
 
 ![img](./img/8.png)
 
-可以看到， setTimeout 时，它的代码在另一个调用栈中，即在 event queue 中，那么他们的上下文环境就不同。
+可以看到， setTimeout 时，它的代码在另一个调用栈中，即在 event queue 中，那么他们的上下文环境就不同。
 
 因为在 普通调用 `setState` 时， `batchingStrategy` 的 `isBatchingUpdates` 已经被设为 true，所以两次 `setState` 的结果并没有立即生效，而是被放进 了 `dirtyComponents` 中。这也解释了两次打印都是 60 的原因，因为新的 state 还没有被应用到组件中
 
