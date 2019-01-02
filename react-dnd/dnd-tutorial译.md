@@ -444,7 +444,7 @@ export const ItemTypes = {
 
 准备工作完成，那我们让 `Knight` 可拖动吧。
 
-[`DragSource`](http://react-dnd.github.io/react-dnd/docs/api/drag-source) 高阶组件接受三个参数： `type` ， `spec` 和 `collect` 。 我们的类型是我们刚刚定义的常量，所以现在我们需要编写一个拖动源规范和一个`collect`函数。 对于Knight来说，拖动源规范将变得非常简单：
+[`DragSource`](http://react-dnd.github.io/react-dnd/docs/api/drag-source) 高阶组件接受三个参数： `type` ， `spec` 和 `collect` 。 我们的 `type` 是我们刚刚定义的常量，所以现在我们需要编写一个 `spec` 和一个`collect`函数。 对于Knight来说， `spec` 将变得非常简单：
 
 ```js
 const knightSource = {
@@ -458,7 +458,7 @@ const knightSource = {
 
 接下来，我们将编写一个collect函数。 `Knight` 需要什么 props？ 它肯定需要一种方法来指定拖动源节点。 在拖动骑士的不透明度时略微调暗也是一个好想法。 因此，它需要知道它当前是否被拖动。
 
-这是我为它写的collect函数：
+这是我为它写的 `collect` 函数：
 
 ```js
 function collect(connect, monitor) {
@@ -512,9 +512,9 @@ export default DragSource(ItemTypes.KNIGHT, knightSource, collect)(Knight);
 这一次，我们无法避免将位置传递到 `Square` 。 毕竟，如果 `Square` 不知道 `Knight` 的位置， `Square` 怎么知道在哪里放置被拖拽的 `Knight` 呢？ 另一方面，仍然感觉不对，因为我们的应用程序中的 `Square` 作为一个实例并没有改变，如果过去很简单，为什么现在使它复杂化？ 当你面对这种困境时，是时候把 [smart and dumb组件](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) 分开了。
 
 
-我将介绍一个名为 `BoardSquare` 的新组件。 它渲染了旧的 `Square` ，但也知道它的位置。 实际上，它封装了Board中用于执行renderSquare方法的一些逻辑。 当时机成熟时，通常从这种render子方法中提取React组件。
+我将介绍一个名为 `BoardSquare` 的新组件。 它渲染了旧的 `Square` ，但也知道它的位置。 实际上，它封装了Board中用于执行 `renderSquare` 方法的一些逻辑。 当时机成熟时，通常从这种 `render` 子方法中提取React组件。
 
-这是我提取的`BoardSquare`：
+这是我提取的 `BoardSquare` ：
 
 ```js
 import React from 'react';
@@ -649,7 +649,7 @@ canDrop(props) {
 }
 ```
 
-我也可以在我的 collect 函数中添加 `monitor.canDrop()` 和一些覆盖渲染代码到组件：
+我也可以在我的 `collect` 函数中添加 `monitor.canDrop()` 和一些覆盖渲染代码到组件：
 
 ```js
 import React from 'react';

@@ -216,47 +216,60 @@ function enqueueUpdate(component) {
 ## 二：Virtual DOM
 
 
+![img](./img/9.png)
 
 
+真实页面对应一个 DOM 树。在传统页面的开发模式中，每次需要更新页面时，都要手动操作 DOM 来进行更新。
+而 react app 每次数据更新后，重新计算 Virtual DOM，并和上一次生成的 Virtual DOM 做对比，对发生 变化的部分做批量更新。React 也提供了直观的 `shouldComponentUpdate` 生命周期回调，来减少数 据变化后不必要的 Virtual DOM 对比过程，以保证性能。 
+但vdom不止就这一个优点，它还方便和其他平台集成，比如 react-native 是基于 Virtual DOM 渲染出原生控件，因为 React 组件可以映射为对应的原生控件。在输出的时候，是输出 Web DOM，还 是 Android 控件，还是 iOS 控件，就由平台本身决定了。
+
+我们知道，网页的重排和重绘是影响性能的重要因素，在频繁的界面交互，重新渲染是不可避免的，React也是使用高效的 vdom + diff算法，来确保尽量少的真实dom操作，从而减少了重排 重绘。
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+其实，构建一套简易 Virtual DOM 模型并不复杂，它只需要具备一个 DOM 标签所需的基本元素即可:
 
 ```js
-
+{
+  // 标签名 
+  tagName: 'div',
+  // 属性 
+  properties: {
+    // 样式
+    style: {}
+  },
+  // 子节点 
+  children: [],
+  // 唯一标识 
+  key: 1
+}
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
