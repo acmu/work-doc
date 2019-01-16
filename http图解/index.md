@@ -195,9 +195,56 @@ Range: bytes=-3000， 5000-7000
 
 请求首部：If-Match 响应首部：Etag
 
+Cache-Control 能操控缓存的工作机制
 
-6.3 P84
+Cache-Control: public
 
+Cache-Control: private
+
+Cache-Control: no-cache 防止从缓存中返回过期的资源，若响应首部指定参数值（no-cache=Location），那么浏览器不能使用缓存，否则可以
+
+Cache-Control: no-store 完全不缓存， no-cache 是防止从缓存中返回过期的资源，不要搞混
+
+Cache-Control: s-maxage=1000 （单位：秒） 适用于供多位用户使用的公共缓存服务器
+
+Cache-Control: max-age=1000 （单位：秒）当参数值为0，会将请求转发给源服务器
+
+
+Cache-Control: max-fresh=60 （单位：秒）过了60秒的资源都无法作为响应返回
+
+
+Cache-Control: max-stale=3600 （单位：秒）缓存资源，过期也会接收（处于 max-stale 指定的时间内过期）
+
+
+Cache-Control: only-if-cached 只有在缓存服务器本地缓存了目标资源的情况下才要求返回，接收只要缓存过的数据，如果没有缓存过的，返回504
+
+
+Cache-Control: must-revalidate 代理会向源服务器再次验证即将返回的响应 缓存目前是否仍然有效。使用这个会忽略max-stale
+
+Cache-Control: no-transform 缓存不能改变实体主体的媒体类型，防止缓存或代理压缩图片等类似操作。
+
+
+Connection: 不再转发给代理的首部字段名
+
+
+Connection：close 管理持久连接
+
+
+Connection：Keep-Alive 兼容http1.0的非持久连接
+
+
+Date： 表名http报文的时间
+
+Pragme： no-cache 历史遗留
+
+Trailer： 事先说明在报文主体或记录了哪些首部字段
+
+Transfer-Encodin： 传输报文主体时采用的编码方式，仅对分块传输编码有效
+
+
+
+
+p97 upgrade
 
 
 ### 4.1
