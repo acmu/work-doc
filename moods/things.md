@@ -46,3 +46,18 @@ rudimentary a 基本的
 
 
 redux源码
+
+[浏览器与Node的事件循环(Event Loop)有何区别?](https://juejin.im/post/5c337ae06fb9a049bc4cd218)
+
+浏览器内核是多线程的，
+
+- GUI 渲染线程
+- JavaScript引擎线程
+- 定时触发器线程
+- 事件触发线程
+- 异步http请求线程
+
+
+JS引擎线程 与 GUI 渲染线程 互斥
+
+浏览器端事件循环中的异步队列有两种：macro（宏任务）队列和 micro（微任务）队列。宏任务队列可以有多个，微任务队列只有一个。

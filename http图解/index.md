@@ -294,25 +294,48 @@ Retry-After： 告知客户端多久之后再次发送请求
 
 Server： 服务端信息
 
-Vary： p125
+Vary： 对缓存进行控制
+
+
+**实体首部字段**
+
+Allow： 可使用的请求方法
+
+
+Content-MD5： 对报文主体执行MD5算法 Base64编码 的值
+
+Expires： 字段失效日期告知客户端
+
+
+cookie
+
+![](./img/8.png)
+![](./img/9.png)
+
+
+cookie的secure限制仅在https安全连接时才可以发生cookie
+
+HttpOnly 使得js脚本无法获得cookie
 
 
 
+## 第七章
 
+SSL（Secure Socket Layer 安全套阶层）或TLS 安全层传输协议 加密http通信
 
+用SSL建立安全通信线路之后，就可以进行http通信了，这叫https
 
+http协议无法确定通信方，但使用SSL就可以，因为有第三方颁发的证书
 
+http下载文件，不能保证一定正确，所以需要https
 
+http + 加密 + 认证 + 完整性保护 = https
 
+通常 http 直接和 tcp 通信，当使用 SSL 时，http 到 ssl 到tcp
 
+正常加密，使用同一个密钥。但还可以用两把密钥的公开密钥加密，分别为私有密钥，公开密钥
 
-
-
-
-### 4.1
-
-
-
+p155
 
 
 
