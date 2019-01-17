@@ -242,9 +242,71 @@ Trailer： 事先说明在报文主体或记录了哪些首部字段
 Transfer-Encodin： 传输报文主体时采用的编码方式，仅对分块传输编码有效
 
 
+Accept: 用户代理能够处理的媒体类型
+
+From: 邮箱
+
+Host: 必须包含的首部字段
+
+只有当If-Match跟ETag匹配一致时，服务器才会接收请求，否则返回412
 
 
-p97 upgrade
+If-Modiafied-Since: 时间   在此时间后未更新过，返回304 Not Modified，更新过返回数据并有Last-Modified首部字段
+
+If-None-Match 只有ETag中不存在这个的时候，服务器才返回
+
+实体标记（ETag）
+
+If-Range 若跟ETag或更新的日期时间匹配一致，就作为范围请求，否则，返回全部资源
+
+![](./img/6.png)
+
+
+If-Unmodified-Since: 时间 只有在指定时间之后，没更新的情况下，才处理请求。否则返回402
+
+Max-Forwards: 最多转发次数
+
+![](./img/7.png)
+
+Range: bytes=5001-10000 范围请求，成功返回206，无法处理范围请求，返回200和全部资源
+
+Referer： 请求的URI是从哪个Web页面发起的。正确写法Referrer，但沿用这个错误的。
+
+
+**响应首部字段**
+
+Accept-Ranges： 能否处理范围请求 bytes 或 none
+
+Age: （秒） 服务器在多久前创建了响应。
+
+
+ETag: 实体资源用唯一的字符串标识
+
+强Etage（第一个，很细微的变化都会改变） 若ETage（第二个，发生了根本变化，才会改变，有W）
+
+ETag: "usage-1234"
+
+ETag: W/"usage-1234"
+
+Location: 重定向到的地址
+
+Retry-After： 告知客户端多久之后再次发送请求
+
+Server： 服务端信息
+
+Vary： p125
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 4.1

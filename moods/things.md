@@ -40,3 +40,9 @@ rudimentary a 基本的
 
 把眼光放大一点，放长远一点，这都是小事。
 
+
+
+如果function参数中callback里面参数还有一个callback会怎么样？
+
+
+redux源码
