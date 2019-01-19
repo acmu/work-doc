@@ -335,7 +335,52 @@ http + 加密 + 认证 + 完整性保护 = https
 
 正常加密，使用同一个密钥。但还可以用两把密钥的公开密钥加密，分别为私有密钥，公开密钥
 
-p155
+p162 https通信过程
+
+https使用2个协议 ssl tls，tls是基于ssl开发的
+
+https比http慢2到100倍
+
+
+## 第八章
+
+http认证方式：
+
+- BASIC认证
+- DIGEST认证
+- SSL客户端认证
+- FormBase认证
+
+md5（message-digest algorithm 5 信息摘要算法）算法不可逆，也就是不可解密
+
+
+
+
+## 第九章
+
+消除http瓶颈的SPDY
+
+![](./img/10.png)
+
+
+WebSocket是一套新协议及API
+
+为实现 WebSocket 通信，需要用到HTTP的Upgrade首部字段，告知服务器通信协议发生改变，以达到握手的目的
+
+
+
+![](./img/11.png)
+
+
+
+## 第十一章
+
+XSS（跨站脚本攻击）属于被动攻击模式
+
+
+
+P225
+
 
 
 
@@ -343,7 +388,7 @@ p155
 
 
 
-![](./img/4.png)
+![](./img/10.png)
 
 
 
