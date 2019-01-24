@@ -73,18 +73,77 @@ for (let item of iterable) {
 
 
 
+next 方法的参数
+yield表达式本身没有返回值，或者说总是返回undefined。next方法可以带一个参数，该参数就会被当作上一个yield表达式的返回值。
+
+
+如果想要第一次调用next方法时，就能够输入值，可以在 Generator 函数外面再包一层。
+
+
+Generator 函数体外抛出的错误，可以在函数体内捕获；反过来，Generator 函数体内抛出的错误，也可以被函数体外的catch捕获。g.throw 和 throw 的区别
+
+
+yield*表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数。
+
+
+从实现上看，在内存中，子例程只使用一个栈（stack），而协程是同时存在多个栈，但只有一个栈是在运行状态，也就是说，协程是以多占用内存为代价，实现多任务的并行。
 
 
 
+一个有趣的问题是，为什么 Node 约定，回调函数的第一个参数，必须是错误对象err（如果没有错误，该参数就是null）？
+
+原因是执行分成两段，第一段执行完以后，任务所在的上下文环境就已经结束了。在这以后抛出的错误，原来的上下文环境已经无法捕捉，只能当作参数，传入第二段。
 
 
 
+一种意见是"传值调用"（call by value）c语言
+
+另一种意见是“传名调用”（call by name）Haskell
 
 
-法对应的不是遍历器生成函数
+JavaScript 语言是传值调用，它的 Thunk 函数含义有所不同。在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为参数的单参数函数。
+
+
+
+async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作。
+
+进一步说，async函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而await命令就是内部then命令的语法糖。
+
+
+async函数 自带执行器的generator
+
+
+```js
+async function getTitle(url) {
+  let response = await fetch(url);
+  let html = await response.text();
+  return html.match(/<title>([\s\S]+)<\/title>/i)[1];
+}
+getTitle('https://tc39.github.io/ecma262/').then(console.log)  // 这里写的足够骚气，可以的 老铁
+```
+
+
+
+await 命令
+正常情况下，await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值
+
+
+Where are variables in a closure stored - stack or heap?
+
+stack [answer](https://stackoverflow.com/questions/29225834/where-are-variables-in-a-closure-stored-stack-or-heap)
+
+[closure](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work?rq=1)
+
+
+
 
 
 ```js
 
 ```
 
+
+
+
+
+[[GeneratorLocation]] 这种都是干嘛的呀？
