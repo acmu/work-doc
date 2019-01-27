@@ -136,6 +136,51 @@ stack [answer](https://stackoverflow.com/questions/29225834/where-are-variables-
 
 
 
+async 函数可以保留运行堆栈。
+
+```js
+const a = () => {
+  b().then(() => c());
+};
+```
+
+上面代码中，函数a内部运行了一个异步任务b()。当b()运行的时候，函数a()不会中断，而是继续执行。等到b()运行结束，可能a()早就运行结束了，b()所在的上下文环境已经消失了。如果b()或c()报错，错误堆栈将不包括a()。
+
+现在将这个例子改成async函数。
+
+```js
+const a = async () => {
+  await b();
+  c();
+};
+```
+
+上面代码中，b()运行的时候，a()是暂停执行，上下文环境都保存着。一旦b()或c()，错误堆栈将包括a()。
+
+
+虽然 Promise 的写法比回调函数的写法大大改进，但是一眼看上去，代码完全都是 Promise 的 API（then、catch等等），操作本身的语义反而不容易看出来。 （所以说promise也就是个美丽的意外 哈？）
+
+
+ES2018 引入了”异步遍历器“（Async Iterator），为异步操作提供原生的遍历器接口，即value和done这两个属性都是异步产生。
+
+
+
+
+异步 Generator 函数
+就像 Generator 函数返回一个同步遍历器对象一样，异步 Generator 函数的作用，是返回一个异步遍历器对象。
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```js
