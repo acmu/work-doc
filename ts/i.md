@@ -2,33 +2,6 @@
 
 > 你不扔掉中文文档，就永远看不懂英文文档。
 
-- fundamental a 基本的
-- denote v 表示
-- arbitrary a 任意的
-- respective a 分别的，各自的
-- alleviate v 减轻
-- elaborate v 详细描述
-- cause v 引起
-- exacerbate v 使恶化
-- frustration n 挫折
-- intimate a 亲密的
-- precise a 精确的
-- dive v 潜水
-- distinct a 明显的，清楚的
-- accidental a 意外的
-- intuition n 直觉
-- In effect 实际上
-- drastically ad 彻底地
-- imply v 意味，暗示
-- broad a 广阔的，宽的
-- rationale n 基本原理
-- other than 除了
-- consult v 请教，商议
-- majority n 多数
-- parenthese n 圆括号
-- colon n 冒号
-
-
 这表示enum类型是可以互相转换的，num & str。
 
 ```ts
@@ -100,6 +73,7 @@ clone.p; // ok
 clone.m(); // error!
 ```
 
+`String.prototype.search()` 返回正则匹配的index，没有返回-1，参数可以不是正则，这时它会被`new RegExp(obj)`包装。
 
 
 

@@ -1,5 +1,5 @@
 # work-doc
-some documents helped me in working.
+Some documents helped me in working.
 
 ## 闲暇生活
 
@@ -11,6 +11,7 @@ some documents helped me in working.
 ## 文档产出
 
 - [ts](./ts/i.md)
+- [en-wrods](./en-wrods/i.md)
 - [webpack](./webpack/i.md)
 - [draft.js](./draftjs/doc.md)
 - [React DnD 翻译](./react-dnd/dnd-tutorial译.md)
