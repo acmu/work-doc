@@ -75,6 +75,12 @@ clone.m(); // error!
 
 `String.prototype.search()` 返回正则匹配的index，没有返回-1，参数可以不是正则，这时它会被`new RegExp(obj)`包装。
 
+In TypeScript, each member is public by default.
+
+a class declaration creates two things: a type representing instances of the class and a constructor function.
+
+Arrow functions capture the this where the function is created rather than where it is invoked.
+
 
 
 
