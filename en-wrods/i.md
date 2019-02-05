@@ -52,3 +52,5 @@
 - ultimately ad 最后
 - rite n 仪式
 - complain v 抱怨
+- constrain v 强迫
+- constraint n 约束

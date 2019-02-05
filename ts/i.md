@@ -81,6 +81,13 @@ a class declaration creates two things: a type representing instances of the cla
 
 Arrow functions capture the this where the function is created rather than where it is invoked.
 
+泛型接口，泛型类
+
+a class has two sides to its type: the static side and the instance side.
+
+泛型可以继承接口：`function loggingIdentity<T extends Lengthwise（这是一个接口）>(arg: T): void { }`
+
+
 
 
 
