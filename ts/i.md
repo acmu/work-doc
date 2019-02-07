@@ -87,7 +87,7 @@ a class has two sides to its type: the static side and the instance side.
 
 泛型可以继承接口：`function loggingIdentity<T extends Lengthwise（这是一个接口）>(arg: T): void { }`
 
-
+`Open–closed principle 开放封闭原则： 软件中的对象应该对于扩展是开放的，但是对于修改是封闭的`，你应该尽量去使用接口代替类型别名。
 
 
 

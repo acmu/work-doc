@@ -64,3 +64,7 @@
 - enforce v 执行
 - mechanism a 机制，原理
 - dictate v 命令
+- eliminate v 消除
+- alias n 别名
+- discriminate v 辨别
+- exhaustive a 详尽的
