@@ -68,3 +68,4 @@
 - alias n 别名
 - discriminate v 辨别
 - exhaustive a 详尽的
+- Polymorphic a 多态的

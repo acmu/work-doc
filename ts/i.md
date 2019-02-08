@@ -89,27 +89,23 @@ a class has two sides to its type: the static side and the instance side.
 
 `Open–closed principle 开放封闭原则： 软件中的对象应该对于扩展是开放的，但是对于修改是封闭的`，你应该尽量去使用接口代替类型别名。
 
-
-
-```js
-
-```
+TypeScript共有两种可用的模块解析策略：Node和Classic。
 
 
 
 
 
-```js
-
-```
 
 
 
 
 
-```js
 
-```
+
+
+
+
+
 
 
 
@@ -137,66 +133,3 @@ a class has two sides to its type: the static side and the instance side.
 
 
 
-
-
-```js
-
-```
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-```js
-
-```
-
-
-
-
-
-
-
-
-
-
-```ts
-
-```
-
-
-```js
-
-```
