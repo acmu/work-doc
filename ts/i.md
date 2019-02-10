@@ -91,9 +91,28 @@ a class has two sides to its type: the static side and the instance side.
 
 TypeScript共有两种可用的模块解析策略：Node和Classic。
 
+null表示"没有对象"，即该处不应该有值。undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。js最初只设计了null，没有 undefined ，但由于JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，所以又设计了undefined。null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。
+
+```js
+Number(null)
+// 0
+5 + null
+// 5
+
+Number(undefined)
+// NaN
+5 + undefined
+// NaN
+```
+
+类装饰器应用于类构造函数，可以用来监视，修改或替换类定义。
 
 
+没使用extends而是使用implements。 把类当成了接口，仅使用Disposable和Activatable的类型而非其实现。
 
+```js
+class SmartObject implements Disposable, Activatable {
+```
 
 
 

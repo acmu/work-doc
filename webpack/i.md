@@ -104,14 +104,59 @@ ts + react, node, graphQL
 'comma-dangle': [2, "always-multiline"],
 ```
 
+## wp ts react
+
+yarn 换源
+
+```shell
+$ yarn config get registry
+https://registry.yarnpkg.com
+
+$ yarn config set registry https://registry.npm.taobao.org
+yarn config v1.13.0
+success Set "registry" to "https://registry.npm.taobao.org".
+Done in 0.08s.
+
+$ yarn config get registry
+https://registry.npm.taobao.org
+```
 
 
+添加依赖
+
+```shell
+yarn add react react-dom @types/react @types/react-dom
+```
+
+添加开发时依赖
+
+```shell
+yarn add --dev typescript awesome-typescript-loader source-map-loader
+```
+
+awesome-typescript-loader可以让Webpack使用TypeScript的标准配置文件 tsconfig.json编译TypeScript代码。 source-map-loader使用TypeScript输出的sourcemap文件来告诉webpack何时生成 自己的sourcemaps。 这就允许你在调试最终生成的文件时就好像在调试TypeScript源码一样。
 
 
+.prettierrc
 
+```json
+{
+  "printWidth": 140,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true
+}
+```
 
+查看yarn全局安装位置
 
-
+```shell
+$ yarn global bin
+C:\Users\Administrator\AppData\Local\Yarn\bin
+```
 
 
 
