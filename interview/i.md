@@ -91,3 +91,83 @@ Reflect.ownKeys(func).forEach(k => {
 // length 3
 // name func
 ```
+
+提升存在的根本原因就是为了解决函数间互相调用的情况
+
+函数提升优先于变量提升，函数提升会把整个函数挪到作用域顶部，变量提升只会把声明挪到作用域顶部
+
+### 组合继承
+
+```js
+function Parent(value) {
+  this.val = value
+}
+Parent.prototype.getValue = function() {
+  console.log(this.val)
+}
+function Child(value) {
+  Parent.call(this, value)
+}
+Child.prototype = new Parent()
+
+const child = new Child(1)
+
+child.getValue() // 1
+child instanceof Parent // true
+```
+
+所以：
+- 函数有 `prototype` ，对象有 `__proto__`
+- 在子类的构造函数中通过 Parent.call(this) 继承父类的属性，然后改变子类的原型为 new Parent() 来继承父类的函数。
+
+
+
+有好多骚操作： https://www.jianshu.com/p/e161bd720e64
+
+```js
+['1','2','3'].map(parseInt)
+// [1, NaN, NaN]
+```
+
+`+` 的优先级比三元运算符 `condition ? val1 : val2`的优先级高。
+
+```js
+var val = 'smtg';
+console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+// "Something"
+```
+
+在JavaScript中，2^53 是最大的值，没有比这更大的值了。所以 2^53 + 1 == 2^53，所以这个循环无法终止。
+
+JavaScript中采用双精度浮点数格式，即IEEE 754标准。在该格式下，有些数字无法表示出来，比如：0.1 + 0.2 = 0.30000000000000004 ，这不是JavaScript的锅，所有采用该标准的语言都有这个问题，比如：Java、Python等。
+
+在 switch 内部使用严格相等 === 进行判断
+
+`-9 % 2 = -1` 以及 `Infinity % 2 = NaN`，求余运算符会保留符号，所以只有 isEven 的判断是可靠的，因为 `0 === -0` 返回 true。
+
+一个鲜为人知的事实：其实 `Array.prototype` 也是一个数组。这点在MDN文档中提到过。 而 `Object.prototype` 就是对象
+
+当 `[0]` 需要被强制转成 Boolean 的时候会被认为是 true，而 a == true 的转换规则在ES5规范的第11.9.3节中已经定义过。规范指出，== 相等中，如果有一个操作数是布尔类型，会先把他转成数字，所以比较变成了 `[0] == 1`；同时规范指出如果其他类型和数字比较，会尝试把这个类型转成数字再进行宽松比较，而对象（数组也是对象）会先调用它的 toString() 方法，此时` [0] `会变成 "0"，然后将字符串 "0" 转成数字 0
+
+```js
+[]==[]
+// false
+```
+
+如果比较的两个对象指向的是同一个对象，就返回 true，否则就返回 false，显然，这是两个不同的数组对象。
+
+"5" + 2 = "52" 很好理解，+ 运算符中只要有一个是字符串，就会变成字符串拼接操作。你不知道的是，- 运算符要求两个操作数都是数字，如果不是，会强制转换成数字，所以结果就变成了 5 - 2 = 3。
+
+js能表示的最大安全整数是 `2**53 - 1` 也就是 `Number.MAX_SAFE_INTEGER` === `9007199254740991`，最小安全整数是 `-9007199254740991` 因为有`-0`的存在，才会出现这种情况。`Number.MIN_VALUE`是大于0的最小浮点数。
+
+<和>（大于号、小于号）的左结合，是从左到右比较；赋值运算符（++、--）是右结合，从右向左
+
+`2 == [[[2]]]` 是 `true`，根据ES5规范，如果比较的两个值中有一个是数字类型，就会尝试将另外一个值强制转换成数字，再进行比较。
+
+点运算符会被优先识别为数字常量的一部分，然后才是对象属性访问符。所以  `3.toString()` 实际上被JS引擎解析成 `(3.)toString()`，显然会出现语法错误。但是如果你这么写 `(3).toString()`，人为加上括号，这就是合法的。
+
+每个字面的正则表达式都是一个单独的实例，即使它们的内容相同。
+
+数组也是对象，ES5规范指出如果两个对象进行相等比较，只有在它们指向同一个对象的情况下才会返回 true，其他情况都返回 false。而对象进行大小比较，会调用 toString 方法转成字符串进行比较，所以结果就变成了字符串 "1,2,3" 和 "1,2,4" 按照字典序进行比较了
+
+arr.reduce() 有4个参数，1个累积值 + 3个 item idx arr
