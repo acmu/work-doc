@@ -281,9 +281,54 @@ console.log('1', a) // -> '1' 1
 
 await 内部实现了 generator ，generator 会保留堆栈中东西，所以这时候 a = 0 被保存了下来
 
+js中 `[[a]]` 这种属性是干嘛的呢？ [这里](https://stackoverflow.com/questions/17174786/what-is-the-significance-of-the-double-brackets-for-the-prototype-property-i) ：These internal properties are not part of the ECMAScript language 内部属性，不能从外部引用
+
+[基于 Promise 对象的自动执行](http://es6.ruanyifeng.com/#docs/generator-async#%E5%9F%BA%E4%BA%8E-Promise-%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C) generator自动执行器
+
+
+```js
+function run(gen){
+  var g = gen();
+
+  function next(data){
+    var result = g.next(data);
+    if (result.done) return result.value;
+    result.value.then(function(data){
+      next(data);
+    });
+  }
+
+  next();
+}
+
+run(gen);
+```
+
+通常来说不建议使用 setInterval。第一，它和 setTimeout 一样，不能保证在预期的时间执行任务。第二，它存在执行累积的问题，即存在多个回调函数连续执行的情况。
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+```js
+
+```
+
+
+```js
+
+```
 
 
 ```js
