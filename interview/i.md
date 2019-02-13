@@ -60,7 +60,7 @@ b.call({});
 
 闭包：函数 A 内部有一个函数 B，函数 B 可以读写函数 A 中的变量，那么函数 B 就是闭包。
 
-关于是否加分号： https://www.zhihu.com/question/20298345 所以就不加了。
+关于是否加分号： https://www.zhihu.com/question/20298345 所以就不加了。真正会导致上下行解析出问题的 token 有 5 个： ( , [ , / , + , -  括号，方括号，正则开头的斜杠，加号，减号 是这些为一行开头时，js不会在上一行自动加分号
 
 
 `JSON.parse(JSON.stringify(object))` 深拷贝有如下问题：
@@ -192,3 +192,100 @@ console.log(d === e, d === f, e === f);
 ```
 
 `foo.name = 'bar'` 函数名是禁止修改的，但这样不会报错
+
+`String.prototype.replace(regexp|substr, newSubStr|function)` 的 function 有3个参数：查询出的值、对应下标、源字符串
+
+
+```js
+function f() {}
+
+console.log(Function.prototype === Object.getPrototypeOf(f)) // true
+```
+
+你的正则加了 g 关系到 exec() 的执行：如果有g，它会按照上一个匹配的位置继续执行，直到返回null了之后，Only invoke again, it will restart.
+
+callback hell 虽然可以把函数分开写，但没有改变根本问题：
+1. 嵌套函数耦合性高，一旦有所改动，就会牵一发而动全身
+2. 不易处理错误
+
+`next()` 如果不传参，yield的返回值就是undefined
+
+```js
+function* foo(x) {
+  let y = 2 * (yield x + 1)
+  let z = yield y / 3
+  return x + y + z
+}
+let it = foo(5)
+console.log(it.next()) // => {value: 6, done: false}
+console.log(it.next(12)) // => {value: 8, done: false}
+console.log(it.next(13)) // => {value: 42, done: true}
+```
+
+当我们在构造 Promise 的时候，构造函数内部的代码是立即执行的：promise 会先把同步代码全部执行完，再把第一个与 res 或 rej 相关的放到event loop中，后面就不会执行：
+
+```js
+const a = new Promise((res, rej) => {
+  res('888');
+  res('999');
+  console.log(1)
+  rej('e');
+  console.log(2)
+});
+
+a.then(s => {
+  console.log('th' + s)
+}).catch(e => {
+  console.log('er' + e)
+})
+// 1
+// 2
+// th888
+```
+
+如果你在 then 中 使用了 return，那么 return 的值会被 Promise.resolve() 包装
+
+```js
+Promise.resolve(1)
+  .then(res => {
+    console.log(res) // => 1
+    return 2 // 包装成 Promise.resolve(2)
+  })
+  .then(res => {
+    console.log(res) // => 2
+  })
+```
+
+一个函数如果加上 async ，那么该函数就会返回一个 Promise
+
+```js
+async function test() {
+  return "1"
+}
+console.log(test()) // -> Promise {<resolved>: "1"}
+```
+
+async function 中的异步 await 会同步执行，即只有第一个await执行完后，才会执行第二个。
+
+
+```js
+let a = 0
+let b = async () => {
+  a = a + await 10
+  console.log('2', a) // -> '2' 10
+}
+b()
+a++
+console.log('1', a) // -> '1' 1
+```
+
+await 内部实现了 generator ，generator 会保留堆栈中东西，所以这时候 a = 0 被保存了下来
+
+
+
+
+
+
+```js
+
+```
