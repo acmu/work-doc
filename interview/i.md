@@ -171,3 +171,24 @@ js能表示的最大安全整数是 `2**53 - 1` 也就是 `Number.MAX_SAFE_INTEG
 数组也是对象，ES5规范指出如果两个对象进行相等比较，只有在它们指向同一个对象的情况下才会返回 true，其他情况都返回 false。而对象进行大小比较，会调用 toString 方法转成字符串进行比较，所以结果就变成了字符串 "1,2,3" 和 "1,2,4" 按照字典序进行比较了
 
 arr.reduce() 有4个参数，1个累积值 + 3个 item idx arr
+
+任何函数都是 Function 的实例，而p是函数 Person 的实例，Object.getPrototypeOf 会获取构造当前对象的原型。所以 Object.getPrototypeOf(p) === Person.prototype，而 Object.getPrototypeOf(Person) === Function.prototype 
+
+```js
+function Person() {}
+var p = new Person();
+
+var a = p.__proto__;
+var b = Object.getPrototypeOf(p);
+var c = Person.prototype;
+console.log(a === b, a === c, b === c);
+// true, true, true
+
+var d = Person.__proto__;
+var e = Object.getPrototypeOf(Person);
+var f = Function.prototype;
+console.log(d === e, d === f, e === f);
+// true, true, true
+```
+
+`foo.name = 'bar'` 函数名是禁止修改的，但这样不会报错
