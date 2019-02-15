@@ -307,6 +307,106 @@ run(gen);
 通常来说不建议使用 setInterval。第一，它和 setTimeout 一样，不能保证在预期的时间执行任务。第二，它存在执行累积的问题，即存在多个回调函数连续执行的情况。
 
 
+简易 promise 实现
+
+```js
+const PENDING = 'pending'
+const RESOLVED = 'resolved'
+const REJECT = 'reject'
+
+function MyPromise(fn) {
+  const that = this
+  that.state = PENDING
+  that.value = null
+  that.resolvedCallbacks = []
+  that.rejectedCallbacks = []
+
+  function resolve(value) {
+    if (that.state === PENDING) {
+      that.state = RESOLVED
+      that.value = value
+      that.resolvedCallbacks.map(cb => cb(that.value))
+    }
+  }
+
+  function reject(value) {
+    if (that.state === PENDING) {
+      that.state = REJECT
+      that.value = value
+      that.rejectedCallbacks.map(cb => cb(that.value))
+    }
+  }
+
+  try {
+    fn(resolve, reject)
+  } catch (e) {
+    reject(e)
+  }
+}
+
+MyPromise.prototype.then = function(onFulfilled, onRejected) {
+  const that = this
+  onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : v => v
+  onRejected =
+    typeof onRejected === 'function'
+      ? onRejected
+      : r => {
+          throw r
+        }
+  if (that.state === PENDING) {
+    that.resolvedCallbacks.push(onFulfilled)
+    that.rejectedCallbacks.push(onRejected)
+  }
+  if (that.state === RESOLVED) {
+    onFulfilled(that.value)
+  }
+  if (that.state === REJECT) {
+    onRejected(that.value)
+  }
+}
+
+new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(1)
+  }, 1000)
+}).then(value => {
+  console.log(value)
+})
+```
+
+在浏览器里，当一个事件发生且有一个事件监听器绑定在该事件上时，消息会被随时添加进队列。如果没有事件监听器，事件会丢失。所以点击一个附带点击事件处理函数的元素会添加一个消息，其它事件类似。
+
+一个 web worker 或者一个跨域的 iframe 都有自己的栈，堆和消息队列。两个不同的运行时只能通过 postMessage 方法进行通信。
+
+setTimeout 会比 Promise 后执行
+
+
+process.nextTick 函数其实是独立于 Event Loop 之外的，它有一个自己的队列，当每个阶段完成后，如果存在 nextTick 队列，就会清空队列中的所有回调函数，并且优先于其他 microtask 执行。
+
+实现call函数：其实就是在第一个参数上加一个 fn 函数，并调用，之后删了。
+
+```js
+Function.prototype.myCall = function(context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  context = context || window
+  context.fn = this
+  const args = [...arguments].slice(1)
+  const result = context.fn(...args)
+  delete context.fn
+  return result
+}
+```
+在调用 new 的过程中会发生以上四件事情：
+
+1. 新生成了一个对象
+2. 链接到原型
+3. 绑定 this
+4. 返回新对象
+
+
+`Number.prototype.toFixed()`会四舍五入，并且返回值是字符串
 
 
 
@@ -330,6 +430,9 @@ run(gen);
 
 ```
 
+```js
+
+```
 
 ```js
 
