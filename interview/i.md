@@ -408,7 +408,7 @@ Function.prototype.myCall = function(context) {
 
 `Number.prototype.toFixed()`会四舍五入，并且返回值是字符串
 
-
+`Tree Shaking` 可以实现删除项目中未被引用的代码，如果你使用 `Webpack 4` 的话，开启生产环境就会自动启动这个优化功能。
 
 
 
