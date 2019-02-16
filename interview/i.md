@@ -410,7 +410,7 @@ Function.prototype.myCall = function(context) {
 
 `Tree Shaking` 可以实现删除项目中未被引用的代码，如果你使用 `Webpack 4` 的话，开启生产环境就会自动启动这个优化功能。
 
-
+用 `history.pushState` 和 `history.replaceState` 改变 URL，不会引起页面的刷新，只会更新浏览器的历史记录，当点击后退按钮时会触发 popState 事件
 
 
 
