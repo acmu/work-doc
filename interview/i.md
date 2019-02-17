@@ -412,7 +412,7 @@ Function.prototype.myCall = function(context) {
 
 用 `history.pushState` 和 `history.replaceState` 改变 URL，不会引起页面的刷新，只会更新浏览器的历史记录，当点击后退按钮时会触发 popState 事件
 
-
+UDP 协议是面向无连接的，也就是说不需要在正式传递数据之前先连接起双方。
 
 
 
