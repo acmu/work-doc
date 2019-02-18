@@ -1,5 +1,7 @@
 # Interview
 
+- [常见问题](#常见问题)
+
 ## 找工作
 
 https://www.zhipin.com/job_detail/db5e3672984fa2fb1X1-3tS6GFo~.html?ka=search_list_24
@@ -414,7 +416,52 @@ Function.prototype.myCall = function(context) {
 
 UDP 协议是面向无连接的，也就是说不需要在正式传递数据之前先连接起双方。
 
+### 常见问题
 
+*实习都干了什么*
+
+我在2个地方实习过，中国航天时，维护过大型项目，了解了Java web相关技术，并且我也经常独自加班到10点以后，看书提升自身技术能力，之后秋招10月分左右，通过自身的努力，获得了字节跳动实习资格，在这期间主要使用React技术栈开发需求，也与很多厉害的人交流，更加明确了自己的目标。
+
+*为什么实习没留下*
+
+对于这个问题，我并不想编造什么理由。我确实参加了实习答辩，但是没有通过。我个人认为我的能力还有所欠缺，比如：总结能力，团队中的协作能力等。但经历了这个，我也深刻认识到了自己的不足，也在努力改进。
+
+*http & s different*
+
+*快速排序*
+
+```js
+const quickSort = arr => {
+  if (arr.length <= 1) {
+    return arr
+  }
+
+  const left = [],
+    right = [],
+    current = arr.splice(0, 1)
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < current) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return quickSort(left).concat(current, quickSort(right))
+}
+
+let a = []
+
+for (let i = 0; i < 10; i++) {
+  a[i] = Math.floor(Math.random() * 50)
+}
+
+console.log(a)
+
+a = quickSort(a)
+
+console.log(a)
+```
 
 
 
