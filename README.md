@@ -4,7 +4,7 @@ Some documents helped me in working.
 ## 闲暇生活
 
 - [日报](./todos/daily.md)
-- [周报](./todos/weeky.md)
+- [周报](./todos/weekly.md)
 - [该做的事](./todos/i.md)
 
 
