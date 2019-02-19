@@ -1,6 +1,7 @@
 # Interview
 
 - [常见问题](#常见问题)
+- [0218面试](#0218面试)
 
 ## 找工作
 
@@ -462,6 +463,50 @@ a = quickSort(a)
 
 console.log(a)
 ```
+
+### 0218面试
+
+position 有6个值：
+ 
+1. `static` 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+2. `relative` 生成相对定位的元素，相对于其正常位置进行定位。**保留原来的空间**
+3. `absolute` 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+4. `fixed` 生成绝对定位的元素，相对于浏览器窗口进行定位。 **尺寸不够也不会产生滚动条**
+5. `inherit` 只从父元素继承 position 属性的值，不会管父级以上的position
+6. `sticky` 基于用户的滚动位置来定位。在 position:relative 与 position:fixed 定位之间切换
+
+
+display
+
+块级元素(block)特性：
+
+- 总是独占一行，表现为另起一行开始，而且其后的元素也必须另起一行显示;
+- 宽度(width)、高度(height)、内边距(padding)和外边距(margin)都可控制;
+
+内联元素(inline)特性：
+
+- 和相邻的内联元素在同一行;
+- 宽度(width)、高度(height)、内边距的top/bottom(padding-top/padding-bottom)和外边距的top/bottom(margin-top/margin-bottom)都不可改变，就是里面文字或图片的大小;
+
+
+float
+
+left right none
+
+flex
+
+flex container
+
+- flex-direction
+- flex-wrap
+- flex-flow
+- justify-content
+- align-items
+- align-content
+
+写一个掘金总结吧。
+
+
 
 
 
