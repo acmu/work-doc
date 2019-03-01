@@ -26,7 +26,7 @@
 
 - [String.prototype.replace()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace#%E6%8F%8F%E8%BF%B0) $n 假如第一个参数是 RegExp对象，并且 n 是个小于100的非负整数，那么插入第 n 个**括号匹配**的字符串。提示：索引是从1开始
 
-结论：要表达清晰，总结到位，即语言上的精炼；不要讲真话
+结论：要表达清晰，总结到位，即语言上的精炼
 
 **2019-2-20 20:52**
 
