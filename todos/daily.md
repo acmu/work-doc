@@ -1,12 +1,36 @@
 # 每天都要写日报
 
+**2019-3-1 07:15**
+
+#### done
+
+- [React hook](https://react.docschina.org/docs/hooks-intro.html)
+- [CSS Grid](https://www.cnblogs.com/moqiutao/p/8682142.html)
+- [我在淘宝做前端的这三年](https://zhuanlan.zhihu.com/p/55272391)
+- [为前端工程之崛起而编程](https://juejin.im/post/5c77eecbf265da2d8532f345) 前端处于软件系统最上游，如果想提高影响力，那就要到下游
+
+#### todo
+
+- hook https://reactjs.org/docs/hooks-state.html#declaring-a-state-variable
+- node书每天50页，css每天30页
+- promise 封装 ajax
+- context & render props
+
+#### think
+
+去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。
+
 **2019-2-28 09:29**
 
-上次面试题复习完
+上次面试题复习完，敢于要提示。
+
+- [String.prototype.replace()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace#%E6%8F%8F%E8%BF%B0) $n 假如第一个参数是 RegExp对象，并且 n 是个小于100的非负整数，那么插入第 n 个**括号匹配**的字符串。提示：索引是从1开始
+
+结论：要表达清晰，总结到位，即语言上的精炼；不要讲真话
 
 **2019-2-20 20:52**
 
-完成了面试[总结](https://juejin.im/post/5c6b89386fb9a049e12ac56b)
+完成了面试[css总结](https://juejin.im/post/5c6b89386fb9a049e12ac56b)
 
 **2019-2-19 07:39**
 

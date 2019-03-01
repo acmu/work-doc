@@ -6,6 +6,7 @@ Some documents helped me in working.
 - [日报](./todos/daily.md)
 - [周报](./todos/weekly.md)
 - [该做的事](./todos/i.md)
+- [春招](./interview/hire.md)
 
 
 ## 文档产出
