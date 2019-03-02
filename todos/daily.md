@@ -1,22 +1,54 @@
 # 每天都要写日报
 
-**2019-3-1 07:15**
 
-#### done
+#### template
+
+**done**
+
+- 
+
+**todo**
+
+- 
+
+
+#### 2019-3-2 08:23
+
+**done**
+
+- [304缓存](https://blog.csdn.net/canot/article/details/76359917)
+  -  Entity Tag -> If-None-Match
+  -  Catch-Control max-age public private no-catch no-store
+- [强缓存 协商缓存](https://www.cnblogs.com/wonyun/p/5524617.html)
+  - 协商缓存 Last-Modified/If-Modified-Since和Etag/If-None-Match
+  - 强缓存 cache-control(请求头) expires
+- [百度 前车之鉴](https://www.zhihu.com/question/311212158)
+- [前端工程 cdn部署](https://www.zhihu.com/question/20790576)
+- hook: 完成 Using the State Hook
+- render props
+
+**todo**
+
+- node 95 - 136
+
+
+#### 2019-3-1 07:15
+
+**done**
 
 - [React hook](https://react.docschina.org/docs/hooks-intro.html)
 - [CSS Grid](https://www.cnblogs.com/moqiutao/p/8682142.html)
 - [我在淘宝做前端的这三年](https://zhuanlan.zhihu.com/p/55272391)
 - [为前端工程之崛起而编程](https://juejin.im/post/5c77eecbf265da2d8532f345) 前端处于软件系统最上游，如果想提高影响力，那就要到下游
 
-#### todo
+**todo**
 
 - hook https://reactjs.org/docs/hooks-state.html#declaring-a-state-variable
 - node书每天50页，css每天30页
 - promise 封装 ajax
 - context & render props
 
-#### think
+**think**
 
 去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。
 
