@@ -1,6 +1,6 @@
 /**
  * @author GitHub: wen98y
- * @name Minyuan
+ * @name MinYuan
  */
 
 const arrLength = 10
