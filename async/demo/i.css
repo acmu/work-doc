@@ -1,0 +1,22 @@
+/**
+ * @author GitHub: wen98y
+ * @name Minyuan
+ */
+
+#sort {
+  display: flex;
+  align-items: flex-end;
+  height: 400px;
+  background-color: rgb(235, 227, 227);
+}
+
+#sort div {
+  width: 40px;
+  margin-left: 20px;
+  background: rgb(109, 240, 109);
+}
+
+.active {
+  box-shadow: 0 0 5px 5px rgba(255, 195, 195, 0.719);
+  background-color: rgb(255, 114, 79) !important;
+}
