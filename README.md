@@ -1,5 +1,8 @@
 # work-doc
-Some documents helped me in working.
+
+郑明远的文档，记录学习！ :)
+
+[我的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
 
 ## 闲暇生活
 
@@ -9,7 +12,7 @@ Some documents helped me in working.
 - [春招](./interview/hire.md)
 
 
-## 文档产出
+## 文档学习
 
 - [ts](./ts/i.md)
 - [interview](./interview/i.md)
