@@ -1,8 +1,8 @@
 # work-doc
 
-郑明远的文档，记录学习！ :)
+郑明远的文档，记录学习 :)
 
-[我的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
+[郑明远的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
 
 ## 闲暇生活
 
