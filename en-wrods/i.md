@@ -69,3 +69,4 @@
 - discriminate v 辨别
 - exhaustive a 详尽的
 - Polymorphic a 多态的
+- scaffold n 脚手架
