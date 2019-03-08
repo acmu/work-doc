@@ -1,21 +1,9 @@
 # 每天都要写日报
 
-
-#### template
-
-**done**
-
-- 
-
-
-
-
-
-
 #### 2019-3-8 09:12
 
-- react文档
-- redex文档
+- react 文档
+- redex 文档
 
 #### 2019-3-7 09:43
 
@@ -23,36 +11,30 @@
 
 #### 2019-3-6 11:58
 
-
 - [我在淘宝做前端的这三年 — 第二年](https://juejin.im/post/5c7dafe8f265da2de25bab27)
 
 #### 2019-3-5 08:22
 
-
-- node 看到239 
-
+- node 看到 239
 
 #### 2019-3-4 08:22
 
-
-- 完成一篇文章 [js冒泡排序动画](https://juejin.im/post/5c7cb5a6e51d4558d360609a)
+- 完成一篇文章 [js 冒泡排序动画](https://juejin.im/post/5c7cb5a6e51d4558d360609a)
 
 #### 2019-3-3 06:09
-
 
 - node 95 - 117
 
 #### 2019-3-2 08:23
 
-
-- [304缓存](https://blog.csdn.net/canot/article/details/76359917)
-  -  Entity Tag -> If-None-Match
-  -  Catch-Control max-age public private no-catch no-store
+- [304 缓存](https://blog.csdn.net/canot/article/details/76359917)
+  - Entity Tag -> If-None-Match
+  - Catch-Control max-age public private no-catch no-store
 - [强缓存 协商缓存](https://www.cnblogs.com/wonyun/p/5524617.html)
-  - 协商缓存 Last-Modified/If-Modified-Since和Etag/If-None-Match
+  - 协商缓存 Last-Modified/If-Modified-Since 和 Etag/If-None-Match
   - 强缓存 cache-control(请求头) expires
 - [百度 前车之鉴](https://www.zhihu.com/question/311212158)
-- [前端工程 cdn部署](https://www.zhihu.com/question/20790576)
+- [前端工程 cdn 部署](https://www.zhihu.com/question/20790576)
 - hook: 完成 Using the State Hook
 - render props
 
@@ -62,7 +44,6 @@
 
 #### 2019-3-1 07:15
 
-
 - [React hook](https://react.docschina.org/docs/hooks-intro.html)
 - [CSS Grid](https://www.cnblogs.com/moqiutao/p/8682142.html)
 - [我在淘宝做前端的这三年](https://zhuanlan.zhihu.com/p/55272391)
@@ -71,7 +52,7 @@
 **todo**
 
 - hook https://reactjs.org/docs/hooks-state.html#declaring-a-state-variable
-- node书每天50页，css每天30页
+- node 书每天 50 页，css 每天 30 页
 - promise 封装 ajax
 - context & render props
 
@@ -83,23 +64,23 @@
 
 上次面试题复习完，敢于要提示。
 
-- [String.prototype.replace()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace#%E6%8F%8F%E8%BF%B0) $n 假如第一个参数是 RegExp对象，并且 n 是个小于100的非负整数，那么插入第 n 个**括号匹配**的字符串。提示：索引是从1开始
+- [String.prototype.replace()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace#%E6%8F%8F%E8%BF%B0) \$n 假如第一个参数是 RegExp 对象，并且 n 是个小于 100 的非负整数，那么插入第 n 个**括号匹配**的字符串。提示：索引是从 1 开始
 
 结论：要表达清晰，总结到位，即语言上的精炼
 
 **2019-2-20 20:52**
 
-完成了面试[css总结](https://juejin.im/post/5c6b89386fb9a049e12ac56b)
+完成了面试[css 总结](https://juejin.im/post/5c6b89386fb9a049e12ac56b)
 
 **2019-2-19 07:39**
 
-把面试内容深入复习一下。ts和网络一点都没问，主要是css、node和wp
+把面试内容深入复习一下。ts 和网络一点都没问，主要是 css、node 和 wp
 
-努力，2020年一定要迎来一个厉害的自己。
+努力，2020 年一定要迎来一个厉害的自己。
 
 技术：
 
-- 学习position flex
+- 学习 position flex
 
 **2019-2-18 16:16**
 
@@ -111,11 +92,11 @@
 
 **2019-2-16 08:37**
 
-xiouea 这个id也不错
+xiouea 这个 id 也不错
 
 **2019-2-15 09:38**
 
-主要看小册。深入React技术栈，wp暂时放一下。
+主要看小册。深入 React 技术栈，wp 暂时放一下。
 
 **2019-2-14 07:14**
 
@@ -129,10 +110,10 @@ xiouea 这个id也不错
 
 **2019-2-12 07:32**
 
-今天用了 setup vpn 插件，很好用，以后可以买个服务器，用影梭玩玩。还看了44道js题，挺有意思的。
+今天用了 setup vpn 插件，很好用，以后可以买个服务器，用影梭玩玩。还看了 44 道 js 题，挺有意思的。
 
-- node 40页 95 - 135
-- 小册 5章 3 - 8
+- node 40 页 95 - 135
+- 小册 5 章 3 - 8
 - wp 文档
 
 **2019-2-11 10:52**
@@ -141,11 +122,11 @@ xiouea 这个id也不错
 
 **2019-2-10 08:56**
 
-今天买了个掘金小册，关于面试的，这几天看下，还有re + ts熟悉下，之后node书，css书。
+今天买了个掘金小册，关于面试的，这几天看下，还有 re + ts 熟悉下，之后 node 书，css 书。
 
 **2019-2-9 08:28**
 
-今天ts handbook 部分看完。
+今天 ts handbook 部分看完。
 
 **2019-2-8 08:20**
 
@@ -157,9 +138,10 @@ xiouea 这个id也不错
 
 **2019-2-6 10:23**
 
-不能只看ts啊，还要复习基础，刷面试题，写简历啊，这些都要并行啊。
+不能只看 ts 啊，还要复习基础，刷面试题，写简历啊，这些都要并行啊。
 
 总结：
+
 - 再提高效率（专心致志做事），面试东西要准备一下了。
 
 **2019-2-5 21:56**
@@ -168,7 +150,7 @@ xiouea 这个id也不错
 
 **2019-2-4 13:56**
 
-了解了一下Dart，Flutter和JIT，AOT。感觉语言也就是那点事啊，还行学精了才厉害，还有确实强类型比弱类型爽。
+了解了一下 Dart，Flutter 和 JIT，AOT。感觉语言也就是那点事啊，还行学精了才厉害，还有确实强类型比弱类型爽。
 
 看到 Generic Types
 
@@ -176,24 +158,18 @@ xiouea 这个id也不错
 
 哇，有些着急了，感觉自己的效率好低啊，需要提升啊。
 
-
 **2019-2-2 10:33**
 
-今天看完ts的3章吧，这周尽量把ts看完。handbook还有20部分，5天看完的话，每天要看4部分哦。
-
+今天看完 ts 的 3 章吧，这周尽量把 ts 看完。handbook 还有 20 部分，5 天看完的话，每天要看 4 部分哦。
 
 **2019-2-1 12:16**
 
-今天把ts 的 Basic Types 和 Variable Declarations 看完了，确实英文看着慢一些，但没办法啊，终究是要读的，等下把wp + ts弄好，明天要加快读文档的速度。
+今天把 ts 的 Basic Types 和 Variable Declarations 看完了，确实英文看着慢一些，但没办法啊，终究是要读的，等下把 wp + ts 弄好，明天要加快读文档的速度。
 
-心里话：
 - 我真的有尽全力去学习吗？还差好多啊，你要知道你想要的是什么啊。
 - 人生真的很短，时间过的真的很快，所以珍惜每一秒，不要浪费。
-
-积累：
 - 海上月是天上月，眼前人是心上人。
-
 
 **2019-2-1 00:01**
 
-今天做了一些准备工作，调整的一下心态，还不错吧。这周的主要目标是：ts文档、wp文档、node书、css书。还有就是看完的东西一定要有总结，有产出。
+今天做了一些准备工作，调整的一下心态，还不错吧。这周的主要目标是：ts 文档、wp 文档、node 书、css 书。还有就是看完的东西一定要有总结，有产出。
