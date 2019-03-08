@@ -14,46 +14,36 @@
 
 #### 2019-3-8 09:12
 
-**done**
-
-- re文档
-- red文档
+- react文档
+- redex文档
 
 #### 2019-3-7 09:43
 
-**done**
-
 - ts react
-
 
 #### 2019-3-6 11:58
 
-**done**
 
 - [我在淘宝做前端的这三年 — 第二年](https://juejin.im/post/5c7dafe8f265da2de25bab27)
 
 #### 2019-3-5 08:22
 
-**done**
 
 - node 看到239 
 
 
 #### 2019-3-4 08:22
 
-**done**
 
 - 完成一篇文章 [js冒泡排序动画](https://juejin.im/post/5c7cb5a6e51d4558d360609a)
 
 #### 2019-3-3 06:09
 
-**done**
 
 - node 95 - 117
 
 #### 2019-3-2 08:23
 
-**done**
 
 - [304缓存](https://blog.csdn.net/canot/article/details/76359917)
   -  Entity Tag -> If-None-Match
@@ -72,7 +62,6 @@
 
 #### 2019-3-1 07:15
 
-**done**
 
 - [React hook](https://react.docschina.org/docs/hooks-intro.html)
 - [CSS Grid](https://www.cnblogs.com/moqiutao/p/8682142.html)
