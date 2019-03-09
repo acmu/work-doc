@@ -6,6 +6,12 @@
 - exports vs module.exports ?
 - [1, 2].mul -> 1 2 1 4 ?
 
+todo: 
+
+1. css book
+2. redux source code
+3. express
+
 #### 2019-3-8 09:12
 
 - react 文档
