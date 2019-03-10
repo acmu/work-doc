@@ -1,5 +1,10 @@
 # 每天都要写日报
 
+#### 2019-3-10 09:35
+
+- [exports vs module.exports](https://github.com/nswbmw/N-blog/blob/master/book/2.2%20exports%20%E5%92%8C%20module.exports.md)
+- [[1, 2].mul -> 1 2 1 4]()
+
 #### 2019-3-9 20:50
 
 - node书全部看完
