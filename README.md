@@ -2,7 +2,7 @@
 
 郑明远的文档，记录学习 :)
 
-| [日报](./todos/daily.md) | [周报](./todos/weekly.md) |
+| [日 报](./todos/daily.md) | [周 报](./todos/weekly.md) |
 | :-: | :-: |
 
 
