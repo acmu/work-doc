@@ -2,6 +2,10 @@
 
 郑明远的文档，记录学习 :)
 
+| [日报](./todos/daily.md) | [周报](./todos/weekly.md) |
+| :-: | :-: |
+
+
 ## 文档
 
 - [React 视图更新机制浅析](./react-vdom/doc.md)
@@ -11,12 +15,6 @@
 - [Promist & async 复习](./async/i.md)
 - [TypeScript](./ts/i.md)
 - [Webpack](./webpack/i.md)
-
-## 思考
-
-- [日报](./todos/daily.md)
-- [周报](./todos/weekly.md)
-
 
 
 [郑明远的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
