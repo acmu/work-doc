@@ -2,15 +2,16 @@
 
 todo:
 
-1. redux source code
-2. express
-3. css book 177 -> 250
+1. express
+2. css book 177 -> 250
 
 #### 2019-3-11 10:06
 
 - css
   - absolute 和 float 同时存在时，float 无效果
-- [从一个数组中找出 N 个数，其和为 M 的所有可能](https://mp.weixin.qq.com/s/2pJkk0avrTF3Vo1FEslRrQ) 
+- [从一个数组中找出 N 个数，其和为 M 的所有可能](https://mp.weixin.qq.com/s/2pJkk0avrTF3Vo1FEslRrQ)
+- [redux source code](https://juejin.im/post/5b9617835188255c781c9e2f)
+  - `getState()` 返回 currentState 的引用，可以直接修改 state，但官方不建议
 
 #### 2019-3-10 09:35
 

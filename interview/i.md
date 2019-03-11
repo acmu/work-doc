@@ -10,11 +10,15 @@ https://www.zhipin.com/job_detail/db5e3672984fa2fb1X1-3tS6GFo~.html?ka=search_li
 校招请官网投递 投递链接：https://job.bytedance.com/campus/
 内推码： XADVXZP
 前端（高级）研发工程师
+
 岗位描述
+
 1. 负责今日头条相关产品前端业务实现。
 2. 负责 WEB/WAP 页面性能优化，打造良好的用户体验。
 3. 搭建高效的开发环境，review 同事代码，确保工程质量。
+
 岗位要求 学历本科及以上
+
 1. 熟悉 WEB 前端技术，对符合 WEB 标准的网站重构有丰富经验，有大型工程经验优先。
 2. 至少熟悉一门 MVVM 框架，熟悉 React+Redux+Koa+Webpack+SSR 技术栈优先。
 3. 精通 HTML5、CSS3、ES6，熟悉 HTTP 协议和 Node.js 开发。
@@ -486,7 +490,7 @@ display
 
 ```js
 /**
- * 从一个数组中找出 N 个数，其和为 M 的所有可能
+ * 从一个数组中找出 N 个数，其和为 M 的所有可能 https://mp.weixin.qq.com/s/2pJkk0avrTF3Vo1FEslRrQ
  * @param {Array} arr 所给数组
  * @param {number} count 用几个数组合
  * @param {number} sum 要寻找的合的值
