@@ -1,21 +1,30 @@
 # 每天都要写日报
 
+todo:
+
+1. redux source code
+2. express
+3. css book 177 -> 250
+4. 所以我们可以建立一个迭代，通过统计消除的次数，就能确定最终有几个 1 了。 https://mp.weixin.qq.com/s/2pJkk0avrTF3Vo1FEslRrQ
+
+#### 2019-3-11 10:06
+
+- css
+  - absolute 和 float 同时存在时，float 无效果
+
 #### 2019-3-10 09:35
+
+[北大算法课](https://www.coursera.org/learn/algorithms)
 
 - [exports vs module.exports](https://github.com/nswbmw/N-blog/blob/master/book/2.2%20exports%20%E5%92%8C%20module.exports.md)
 - [[1, 2].mul -> 1 2 1 4](https://gist.github.com/wen98y/26d2374a3f5c3b5c8032b61e61f83f0b)
+- [一文读懂 HTTP/2 及 HTTP/3 特性](https://github.com/ljianshu/Blog/issues/57)
 
 #### 2019-3-9 20:50
 
-- node书全部看完
+- node 书全部看完
 - exports vs module.exports ?
 - [1, 2].mul -> 1 2 1 4 ?
-
-todo: 
-
-1. css book
-2. redux source code
-3. express
 
 #### 2019-3-8 09:12
 
