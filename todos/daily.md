@@ -5,11 +5,43 @@ todo:
 1. express
 2. css book 177 -> 250
 
+#### 2019-3-15 01:18
+
+- 笔试编程题 做完牛客网上以前的编程题
+- [css grid](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
+- js 继承
+  - 深拷贝要记得特殊判断 Array
+- [react life cycle: 16.3 and before](https://segmentfault.com/a/1190000016617400)
+
 #### 2019-3-14 06:28
 
-- [css grid](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
-- [浏览器import](https://www.zhangxinxu.com/wordpress/2018/08/browser-native-es6-export-import-module/)
-- 笔试编程题 做完牛客网上头条以前的编程题
+- [浏览器 import](https://www.zhangxinxu.com/wordpress/2018/08/browser-native-es6-export-import-module/)
+  - 传统的内联 `<script>` 是没有 defer 这种概念的，从不异步
+  - `access-control-allow-origin: https://www.zhangxinxu.com` 通过这个跨域，可设为 \*
+  - import()返回一个 promise
+- [Symbol tutorial](https://www.zhangxinxu.com/wordpress/2018/04/known-es6-symbol-function/)
+
+```js
+console.log(Symbol.for('a') === Symbol.for('a'))
+
+let a = Symbol.for('b')
+
+console.log(Symbol.keyFor(a))
+// true
+// b
+
+var smy = Symbol()
+var info = {
+  smy: 'x',
+  [smy]: 'y'
+}
+
+console.log(info.smy) // 输出'x'
+console.log(info['smy']) // 输出'x'
+console.log(info[smy]) // 输出'y'
+```
+
+- [script defer async](https://segmentfault.com/q/1010000000640869)
 
 #### 2019-3-11 10:06
 
