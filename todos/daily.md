@@ -5,6 +5,14 @@ todo:
 1. express
 2. css book 177 -> 250
 
+[js extends](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
+
+gist add code
+
+#### 2019-3-16 07:01
+
+- 编程题
+
 #### 2019-3-15 01:18
 
 - 笔试编程题 做完牛客网上以前的编程题
