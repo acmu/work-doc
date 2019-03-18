@@ -73,6 +73,49 @@ transform: translate(-50%, -50%);
 gist add code
 
   - write `call bind new Object.create`
+
+```js
+Function.prototype.myCall = function(context) {
+  // 判断是否是undefined和null
+  if (typeof context === 'undefined' || context === null) {
+    context = window
+  }
+  context.fn = this
+  let args = [...arguments].slice(1)
+  let result = context.fn(...args)
+  delete context.fn
+  return result
+}
+
+Function.prototype.myBind = function(context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  let _this = this
+  let args = [...arguments].slice(1)
+  return function F() {
+    // 判断是否被当做构造函数使用
+    if (this instanceof F) {
+      return _this.apply(this, args.concat([...arguments]))
+    }
+    return _this.apply(context, args.concat([...arguments]))
+  }
+}
+
+
+Object.create =  function (o) {
+    var F = function () {};
+    F.prototype = o;
+    return new F();
+};
+
+
+var obj = new Base();
+
+var obj  = {};
+obj.__proto__ = Base.prototype;
+Base.call(obj);
+```
   - Object deepClone 循环引用
   - 继承
   - 防抖与节流
