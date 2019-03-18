@@ -7,17 +7,81 @@ todo:
 
 
 
+#### 2019-3-18 09:07
+
+- [bfc margin重叠](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md)
+  - CSS2.1 中只有BFC和IFC, CSS3中还增加了G（grid）FC和F(flex)FC
+
+```html
+左右定宽，中间自适应
+.le {
+  float: left;
+}
+.ri {
+  float: right:
+}
+.cen {
+  overflow: hidden;
+}
+
+<div class="le"></div>
+<div class="ri"></div>
+<div class="cen"></div>
+```
+
+
+```html
+css grid 居中
+<style>
+  .wrap {
+    width: 400px;
+    height: 400px;
+    background-color: #cfc;
+    display: grid;
+  }
+  .son {
+    align-self: center;
+    justify-self: center;
+    background-color: #fcc;
+  }
+</style>
+<body>
+  <div class="wrap">
+    <div class="son">sdf</div>
+  </div>
+</body>
+
+flex 居中
+display: flex;
+align-items: center;
+justify-content: center;
+
+translate居中
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+```
+- [redux source code](https://juejin.im/post/5b9617835188255c781c9e2f)
+
 
 #### 2019-3-17 10:37
 
-- 复习面试题，总结
+- [复习面试题和总结](https://github.com/LiangJunrong/document-library/blob/master/other-library/Interview/PersonalExperience/2019-InterviewPreparation.md#chapter-two-three)
+  - 模块化：commonjs同步加载 AMD异步加载 CMD按需加载
+
+gist add code
+
+  - write `call bind new Object.create`
+  - Object deepClone 循环引用
+  - 继承
+  - 防抖与节流
 
 #### 2019-3-16 07:01
 
 - 编程题
 - [js extends](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
 
-gist add code
 
 ```js
 function Foo() {}
@@ -69,7 +133,6 @@ console.log(info[smy]) // 输出'y'
 - css
   - absolute 和 float 同时存在时，float 无效果
 - [从一个数组中找出 N 个数，其和为 M 的所有可能](https://mp.weixin.qq.com/s/2pJkk0avrTF3Vo1FEslRrQ)
-- [redux source code](https://juejin.im/post/5b9617835188255c781c9e2f)
   - `getState()` 返回 currentState 的引用，可以直接修改 state，但官方不建议
 
 #### 2019-3-10 09:35

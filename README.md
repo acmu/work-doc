@@ -17,4 +17,4 @@
 - [Webpack](./webpack/i.md)
 
 
-[郑明远的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
+[郑明远的掘金](https://juejin.im/user/5bcab884e51d450e81091745) - [郑明远的GitHub](https://github.com/wen98y)
