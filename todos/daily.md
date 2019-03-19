@@ -7,6 +7,24 @@ todo:
 
 
 
+
+#### 2019-3-19 09:09
+
+- node debug
+  - `node --inspect-brk=9229 app.js` or `node --inspect app.js` and then check `about:inspect` in chrome
+- `box-sizing: content-box | border-box | inherit`
+- [ajax 状态码](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
+
+| Value | State            | Description                                                   |
+| :---- | :--------------- | :------------------------------------------------------------ |
+| 0     | UNSENT           | Client has been created. open() not called yet.               |
+| 1     | OPENED           | open() has been called.                                       |
+| 2     | HEADERS_RECEIVED | send() has been called, and headers and status are available. |
+| 3     | LOADING          | Downloading; responseText holds partial data.                 |
+| 4     | DONE             | The operation is complete.                                    |
+
+- xsrf response header
+
 #### 2019-3-18 09:07
 
 - [bfc margin重叠](https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md)
