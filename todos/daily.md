@@ -1,12 +1,23 @@
 # 每天都要写日报
 
-todo:
-
-1. express
-2. css book 177 -> 250
-
+- 二分代码
+- 一句话概述下什么是 promise
+- [写给初级前端的面试经验](https://juejin.im/post/5c8bb79e6fb9a04a006fe79a)
 
 
+#### 2019-3-20 08:03
+
+- [面试总结](https://juejin.im/post/5c90ac91e51d45285210b4c9)
+- [Spoon-Knife](https://github.com/octocat/Spoon-Knife)
+  - practice pull request
+- [学不进去，没时间学怎么办](https://mp.weixin.qq.com/s/aubZqAvinC9nZ8S8jq1fJw)
+  - 如果学累了，就去看些有趣且有用的文章，而不是娱乐
+- [git rebase](https://www.cnblogs.com/pinefantasy/articles/6287147.html)
+  - 通过git rebase衍合（即合并分支）能产生一个更为整洁的提交历史。
+  - 把解决分支补丁同最新主干代码之间的冲突的责任，划转给由提交补丁的人来解决。
+- [玩一下github pages](https://blog.csdn.net/KNIGH_YUN/article/details/79774344)
+  - 即只是搭了一个静态服务器，所以没有数据库，但如今前后端分离，还是有[解决办法](https://blog.csdn.net/baidu_25464429/article/details/80805237)，如leancloud
+  - [还是挺好玩的](https://wen98y.github.io/pages-demo/)，可以写些项目或demo在上面
 
 #### 2019-3-19 09:09
 
@@ -15,15 +26,15 @@ todo:
 - `box-sizing: content-box | border-box | inherit`
 - [ajax 状态码](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
 
-| Value | State            | Description                                                   |
-| :---- | :--------------- | :------------------------------------------------------------ |
-| 0     | UNSENT           | Client has been created. open() not called yet.               |
-| 1     | OPENED           | open() has been called.                                       |
-| 2     | HEADERS_RECEIVED | send() has been called, and headers and status are available. |
-| 3     | LOADING          | Downloading; responseText holds partial data.                 |
-| 4     | DONE             | The operation is complete.                                    |
+| Value | State              | Description                                                   |
+| :---- | :----------------- | :------------------------------------------------------------ |
+| 0     | `UNSENT`           | Client has been created. open() not called yet.               |
+| 1     | `OPENED`           | open() has been called.                                       |
+| 2     | `HEADERS_RECEIVED` | send() has been called, and headers and status are available. |
+| 3     | `LOADING`          | Downloading; responseText holds partial data.                 |
+| 4     | `DONE`             | The operation is complete.                                    |
 
-- xsrf response header
+- prevent xsrf: check cookie and token
 
 #### 2019-3-18 09:07
 
@@ -266,8 +277,6 @@ console.log(info[smy]) // 输出'y'
 - promise 封装 ajax
 - context & render props
 
-**think**
-
 去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。
 
 **2019-2-28 09:29**
@@ -295,10 +304,6 @@ console.log(info[smy]) // 输出'y'
 **2019-2-17 17:11**
 
 过几天要一直学车了，所以这几天一定要好好学
-
-**2019-2-16 08:37**
-
-xiouea 这个 id 也不错
 
 **2019-2-15 09:38**
 
@@ -372,7 +377,6 @@ xiouea 这个 id 也不错
 
 - 我真的有尽全力去学习吗？还差好多啊，你要知道你想要的是什么啊。
 - 人生真的很短，时间过的真的很快，所以珍惜每一秒，不要浪费。
-- 海上月是天上月，眼前人是心上人。
 
 **2019-2-1 00:01**
 
