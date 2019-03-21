@@ -1,13 +1,52 @@
 # 每天都要写日报
 
+todo:
 - 二分代码
 - 一句话概述下什么是 promise
+- 数组 拉平
+
+
+
+#### 2019-3-21 08:56
+
 - [写给初级前端的面试经验](https://juejin.im/post/5c8bb79e6fb9a04a006fe79a)
+  - css 3列布局
+  - script intergrity的作用
+  - async balel 怎么转的
+  - 深拷贝 lodash
+- [阿里CBU事业部前端社招面试总结](https://juejin.im/post/5c90f573e51d450a7d7dfc75)
+```js
+// transform('=g1.23 联调(-1)=，=g1.25 发布(+1)=') => `<g>1.23 联调(-1)</g>，<g>1.25 发布(+1)</g>`
+
+transform = x => x.replace(/=g([^=]*)=/g, `<g>$1</g>`)
+
+// merge([2, 2, 3, 4, 4, 2]) => [2, 3, 4, 2] 把后面的且相同的合并
+
+merge = x => x.filter((num, idx, arr) => !idx || arr[idx] != arr[idx-1])
+
+merge = x => (x + ',').replace(/(\d+,)\1+/g, '$1').split(',').slice(0, -1)
+
+// 函数式编程中的组合函数 redux源码中有 https://github.com/reduxjs/redux/blob/master/src/compose.js
+composeFunctions = (...funcs) => {
+ if (funcs.length === 1) return funcs[0];
+ return funcs.reduce((a, b) => (...args) => b(a(...args)))
+}
+
+```
+  - 自我介绍：个人的基本情况、工作能力和未来规划三个方面
+  - Promise的用法以及实现原理
+  - 前端存储方式，以及它们之间的优缺点。
+  - 有成就感的项目，哪些地方让你特有成就感，还有遇到的困难是什么，如何解决的
+  - 我问了两个问题，想要招个什么样的人？ 面试结果什么时候能知道
+  - 对于boss面问到的问题，我总结了一下其实这两个问题都很大。首先第一个问题，你在做什么？其实潜台词就是问你都做了什么项目，此时正确的做法是介绍自己参与的项目、所在项目的角色，然后详细讲解你参与项目的技术方案，开发过程中遇到的问题以及如何去解决这些问题，将主动权完全交给你，你可以自由发挥把面试官带到你的思路中。其实面试官更关心的是你解决问题的过程，而不是像我一样两句话搞定。第二个问题就是要详细介绍自己的产品，产品和其他竞品的优势在哪里？以及你贡献的内容和目前取得了什么样的成就等等。这种开放性的问题说好答也好答，说不好答也不好答，完全看自己的语言组织能力。
+- [当我有一台云服务器时，我做了些什么](https://juejin.im/post/5c9232a8e51d45729b3b71e1)
+  - 想学docker
 
 
 #### 2019-3-20 08:03
 
 - [面试总结](https://juejin.im/post/5c90ac91e51d45285210b4c9)
+  - 写代码时不能只完成功能就行，还要注意代码可读性、复杂度
 - [Spoon-Knife](https://github.com/octocat/Spoon-Knife)
   - practice pull request
 - [学不进去，没时间学怎么办](https://mp.weixin.qq.com/s/aubZqAvinC9nZ8S8jq1fJw)
