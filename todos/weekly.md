@@ -1,9 +1,13 @@
 # 每周五写周报
 
+### 2019-3-22 15:33
+
+这一周看了挺多文章的，也有挺多收获的，都写在日报中了。祝我自己能找到一份好工作吧！
+
 #### 2019-3-15 15:32
 
-- css书
-- redux源码
+- css 书
+- redux 源码
 - 面试编程题准备 和 总结
 
 #### 2019-3-8 11:16
@@ -54,5 +58,5 @@ Next week:
 
 **2019-2-1 00:04**
 
-- [ ] complete ts English Documentation
-- [ ] webpack four English Documentation
+- complete ts English Documentation
+- webpack four English Documentation

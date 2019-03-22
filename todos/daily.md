@@ -1,19 +1,32 @@
 # 每天都要写日报
 
 todo:
-- 二分代码
 - 一句话概述下什么是 promise
 - 数组 拉平
+
+#### 2019-3-22 00:30
+
+- [2个数之和，二分代码](https://gist.github.com/wen98y/a0975c31f8a8d3a2ae2b252deb9fc558) - [掘金文章](https://juejin.im/post/5c9437755188252da55958f4)
+- async balel 怎么转的 -> @babel/plugin-transform-async-to-generator
+- 一句话概述下什么是 promise http://es6.ruanyifeng.com/#docs/promise
+  - 所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。
+  - 对象的状态不受外界影响，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）
+  - 一旦状态改变，就不会再变，任何时候都可以得到这个结果
+
+- 前端存储方式，以及它们之间的优缺点。
+  - cookie / local storage / session storage / Web SQL / indexedDB / service works + manifest
+
+- css 3列布局
+- redux 源码
+- 深拷贝 lodash
+
+- 自我介绍：个人的基本情况、工作能力和未来规划三个方面
 
 
 
 #### 2019-3-21 08:56
 
 - [写给初级前端的面试经验](https://juejin.im/post/5c8bb79e6fb9a04a006fe79a)
-  - css 3列布局
-  - script intergrity的作用
-  - async balel 怎么转的
-  - 深拷贝 lodash
 - [阿里CBU事业部前端社招面试总结](https://juejin.im/post/5c90f573e51d450a7d7dfc75)
 ```js
 // transform('=g1.23 联调(-1)=，=g1.25 发布(+1)=') => `<g>1.23 联调(-1)</g>，<g>1.25 发布(+1)</g>`
