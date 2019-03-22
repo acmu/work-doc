@@ -1,27 +1,119 @@
 # 每天都要写日报
 
-todo:
-- 一句话概述下什么是 promise
-- 数组 拉平
 
 #### 2019-3-22 00:30
 
+- [React 进阶](https://juejin.im/post/5c92f499f265da612647b754)
 - [2个数之和，二分代码](https://gist.github.com/wen98y/a0975c31f8a8d3a2ae2b252deb9fc558) - [掘金文章](https://juejin.im/post/5c9437755188252da55958f4)
 - async balel 怎么转的 -> @babel/plugin-transform-async-to-generator
 - 一句话概述下什么是 promise http://es6.ruanyifeng.com/#docs/promise
   - 所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。
   - 对象的状态不受外界影响，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）
   - 一旦状态改变，就不会再变，任何时候都可以得到这个结果
-
 - 前端存储方式，以及它们之间的优缺点。
   - cookie / local storage / session storage / Web SQL / indexedDB / service works + manifest
+- 数组 拉平
+```js
+let arr = [1, [2, [3, 4]]]
 
-- css 3列布局
-- redux 源码
-- 深拷贝 lodash
+function flattern(arr) {
+  let result = []
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattern(arr[i])
+    } else {
+      result.push(arr[i])
+    }
+  }
+  return result
+}
 
-- 自我介绍：个人的基本情况、工作能力和未来规划三个方面
+function flatten(arr) {
+  return arr
+    .toString()
+    .split(',')
+    .map(function(item) {
+      return +item
+    })
+}
 
+function flatten(arr) {
+  return arr.reduce(function(prev, next) {
+    return prev.concat(Array.isArray(next) ? flatten(next) : next)
+  }, [])
+}
+
+console.log(flattern(arr))
+```
+
+- [深拷贝 浅拷贝 赋值](https://juejin.im/post/59ac1c4ef265da248e75892b)
+  - 浅拷贝是只深拷贝第一层，赋值是直接改
+```js
+function deepCopy(obj) {
+  var result = Array.isArray(obj) ? [] : {}
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (typeof obj[key] === 'object') {
+        result[key] = deepCopy(obj[key]) //递归复制
+      } else {
+        result[key] = obj[key]
+      }
+    }
+  }
+  return result
+}
+```
+- [xss 跨站脚本攻击 xsrf 跨站请求伪造](https://juejin.im/post/5b6b08956fb9a04fc67c2263)
+  - xss本质是html注入,和sql注入差不多
+  - 预防xsrf：1.验证 Referer 2.Token
+- [css 3列布局](https://gist.github.com/wen98y/3e5f4a2e39f8c65e9d2e889ca351a73f)
+  - `flex grid position float:left+calc(a - b)`
+
+
+- js继承
+```js
+// 寄生组合继承
+function Parent(value) {
+  this.val = value
+}
+Parent.prototype.getValue = function() {
+  console.log(this.val)
+}
+
+function Child(value) {
+  Parent.call(this, value)
+}
+Child.prototype = Object.create(Parent.prototype, {
+  constructor: {
+    value: Child,
+    // enumerable: false, 默认是false
+    writable: true,
+    configurable: true
+  }
+})
+
+const child = new Child(1)
+
+child.getValue() // 1
+child instanceof Parent // true
+
+// 组合继承
+function Parent(value) {
+  this.val = value
+}
+Parent.prototype.getValue = function() {
+  console.log(this.val)
+}
+function Child(value) {
+  Parent.call(this, value)
+}
+Child.prototype = new Parent()
+
+const child = new Child(1)
+
+child.getValue() // 1
+child instanceof Parent // true
+```
 
 
 #### 2019-3-21 08:56
@@ -46,11 +138,8 @@ composeFunctions = (...funcs) => {
 }
 
 ```
-  - 自我介绍：个人的基本情况、工作能力和未来规划三个方面
-  - Promise的用法以及实现原理
-  - 前端存储方式，以及它们之间的优缺点。
   - 有成就感的项目，哪些地方让你特有成就感，还有遇到的困难是什么，如何解决的
-  - 我问了两个问题，想要招个什么样的人？ 面试结果什么时候能知道
+  - 问问题：想要招什么样的人
   - 对于boss面问到的问题，我总结了一下其实这两个问题都很大。首先第一个问题，你在做什么？其实潜台词就是问你都做了什么项目，此时正确的做法是介绍自己参与的项目、所在项目的角色，然后详细讲解你参与项目的技术方案，开发过程中遇到的问题以及如何去解决这些问题，将主动权完全交给你，你可以自由发挥把面试官带到你的思路中。其实面试官更关心的是你解决问题的过程，而不是像我一样两句话搞定。第二个问题就是要详细介绍自己的产品，产品和其他竞品的优势在哪里？以及你贡献的内容和目前取得了什么样的成就等等。这种开放性的问题说好答也好答，说不好答也不好答，完全看自己的语言组织能力。
 - [当我有一台云服务器时，我做了些什么](https://juejin.im/post/5c9232a8e51d45729b3b71e1)
   - 想学docker
@@ -150,10 +239,8 @@ transform: translate(-50%, -50%);
 
 - [复习面试题和总结](https://github.com/LiangJunrong/document-library/blob/master/other-library/Interview/PersonalExperience/2019-InterviewPreparation.md#chapter-two-three)
   - 模块化：commonjs同步加载 AMD异步加载 CMD按需加载
+  - write `call bind new Object.create` *gist add*
 
-gist add code
-
-  - write `call bind new Object.create`
 
 ```js
 Function.prototype.myCall = function(context) {
