@@ -1,5 +1,23 @@
 # 每天都要写日报
 
+```js
+  function getState() {
+    return state;
+  }
+  /* 注意！！！只修改了这里，用一个不匹配任何计划的 type，来获取初始值 */
++  dispatch({ type: Symbol() })
+
+-  return {
+    subscribe,
+    dispatch,
+    getState
+  }
+```
+
+
+### 2019-3-26 00:03
+
+- 完成redux 源码，以及总结；更加专注，避免分散精神
 
 #### 2019-3-25 23:37
 
