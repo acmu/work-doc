@@ -1,29 +1,28 @@
 # 每天都要写日报
 
-```js
-  function getState() {
-    return state;
-  }
-  /* 注意！！！只修改了这里，用一个不匹配任何计划的 type，来获取初始值 */
-+  dispatch({ type: Symbol() })
+- koa 源码
 
--  return {
-    subscribe,
-    dispatch,
-    getState
-  }
-```
+### 2019-3-27 07:15
+
+- [koa 教程](https://chenshenhai.github.io/koa2-note/)
+- [koa 文档](https://koa.bootcss.com/)
 
 
 ### 2019-3-26 00:03
 
-- 完成redux 源码，以及总结；更加专注，避免分散精神
+- [完成 redux 源码](https://github.com/brickspert/blog/issues/22#intro)，以及总结；更加专注，避免分散精神
+- [React + Koa 案例](https://juejin.im/post/5c90b4115188252d9559136c)
+
 
 #### 2019-3-25 23:37
 
 面试过后，我也放松了两天，找同学玩了一下，还是很怀念那段时光。
 
 其实能面试到三面，已经不错了，但最后没过，还是有些不甘心，尤其是问的进程线程，和内核态用户态，能问到操作系统去，也是厉害。还问hook使用限制的原理，我也知道深层原理重要，但面试大多不问啊，如果我花大段时间去这个深层原理，结果你考的是那个，那你让我怎么办？真的很恶心。
+
+- 进程线程
+- 内核态用户态
+- hook fiber 深层原理
 
 那好，现在就主**实践、深层原理、写文章总结**这3方面。
 
