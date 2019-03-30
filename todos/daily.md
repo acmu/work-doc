@@ -1,6 +1,13 @@
 # 每天都要写日报
 
-- koa 源码
+
+
+### 2019-3-30 10:47
+
+- [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
+- [菜鸟教程 node](http://www.runoob.com/nodejs/nodejs-http-server.html)
+- [node 调试](https://www.imooc.com/learn/1093)
+  - Inspector 构成： 1.websockets服务 2.Inspector协议 3.http服务（获取元信息）
 
 ### 2019-3-28 19:23
 
