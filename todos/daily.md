@@ -1,23 +1,25 @@
 # 每天都要写日报
 
+### 2019-3-31 16:05
+
+- [菜鸟教程 node](http://www.runoob.com/nodejs/nodejs-http-server.html)
 
 
 ### 2019-3-30 10:47
 
 - [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
-- [菜鸟教程 node](http://www.runoob.com/nodejs/nodejs-http-server.html)
 - [node 调试](https://www.imooc.com/learn/1093)
   - Inspector 构成： 1.websockets服务 2.Inspector协议 3.http服务（获取元信息）
+  - vscode 内断点 `auto attach` --inspect 后可以用vscode调试
+  - `http://localhost:9229/json` 的 devtoolsFrontendUrl 可以调试
 
 ### 2019-3-28 19:23
 
-- [koa 文 档](https://koa.bootcss.com/)
-  - 应用程序
+- [koa 文 档](https://koa.bootcss.com/) 全部看完
 
 ### 2019-3-27 07:15
 
 - [koa 教程](https://chenshenhai.github.io/koa2-note/)
-  - 12. 项目框架搭建
 
 ### 2019-3-26 00:03
 
