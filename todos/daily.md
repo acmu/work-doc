@@ -1,13 +1,24 @@
 # 每天都要写日报
 
+- [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
+
+http://www.runoob.com/nodejs/nodejs-router.html
+
+
+### 2019-4-2 10:15
+
+
+
 ### 2019-3-31 16:05
 
 - [菜鸟教程 node](http://www.runoob.com/nodejs/nodejs-http-server.html)
+  - 使用`npm help <command>`可查看某条命令的详细帮助，例如npm help install。
+  - EventEmitters 如果你添加的监听器超过 10 个就会输出警告信息。 setMaxListeners 函数用于提高监听器的默认限制的数量。
+  - `require 模块` 有缓存
 
 
 ### 2019-3-30 10:47
 
-- [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
 - [node 调试](https://www.imooc.com/learn/1093)
   - Inspector 构成： 1.websockets服务 2.Inspector协议 3.http服务（获取元信息）
   - vscode 内断点 `auto attach` --inspect 后可以用vscode调试
