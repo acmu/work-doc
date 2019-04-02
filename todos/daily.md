@@ -10,6 +10,9 @@ http://www.runoob.com/nodejs/nodejs-router.html
 
 - 加ssd，升级win 10
 - 看到[这里](http://www.runoob.com/nodejs/nodejs-express-framework.html)
+- [多账号ssh配置](https://www.cnblogs.com/libin-1/p/5986430.html)
+  - `ssh-keygen -t rsa -C "邮箱地址" -f ~/.ssh/github_jslite` 会生成 github_jslite 和 github_jslite.pub 这两个文件
+  - `ssh -T git@github.com` #测试是否成功
 
 ### 2019-3-31 16:05
 
