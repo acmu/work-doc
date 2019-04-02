@@ -1,13 +1,15 @@
 # 每天都要写日报
 
 - [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
+- docker nginx
 
 http://www.runoob.com/nodejs/nodejs-router.html
 
 
-### 2019-4-2 10:15
+### 2019-4-2 22:14:49
 
-
+- 加ssd，升级win 10
+- 看到[这里](http://www.runoob.com/nodejs/nodejs-express-framework.html)
 
 ### 2019-3-31 16:05
 
