@@ -1,10 +1,14 @@
 # 每天都要写日报
 
-- [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
 - docker nginx
 
 http://www.runoob.com/nodejs/nodejs-router.html
 
+### 2019-4-3 14:01:05
+
+- [vsc自定义主题](https://blog.csdn.net/liaozhenting/article/details/77654722)
+  - 进入插件目录`C:\Users\你的用户名\.vscode\extensions\ms-vscode.theme-tomorrowkit-0.1.4\themes` 用编辑器打开，之后修改
+- [koa 源码](https://juejin.im/post/5914fdce44d904006c44dfac)
 
 ### 2019-4-2 22:14:49
 
