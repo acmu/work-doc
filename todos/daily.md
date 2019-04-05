@@ -1,8 +1,12 @@
 # 每天都要写日报
 
-- docker nginx
+- docker nginx mongodb redis
 
-http://www.runoob.com/nodejs/nodejs-router.html
+### 2019-4-5 17:11:14
+
+- [写一个Koa](https://juejin.im/post/5ba48fc4e51d450e704277fa)
+- [入门 docker](https://www.imooc.com/learn/867)
+- [Docker从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 
 ### 2019-4-4 22:57:52
 
