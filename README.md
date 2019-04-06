@@ -2,9 +2,8 @@
 
 郑明远的文档，记录学习 : )
 
-| [日 报](./todos/daily.md) | [周 报](./todos/weekly.md) | [双月OKR](./todos/double-okr.md) |
-| :-----------------------: | :------------------------: | :------------------------------: |
-
+| [日 报](./todos/daily.md) | [周 报](./todos/weekly.md) | [双月 OKR](./todos/double-okr.md) |
+| :-----------------------: | :------------------------: | :-------------------------------: |
 
 ## 文档
 
@@ -16,5 +15,7 @@
 - [TypeScript](./ts/i.md)
 - [Webpack](./webpack/i.md)
 
+## 关于我
 
-[郑明远的掘金](https://juejin.im/user/5bcab884e51d450e81091745)
+郑明远的掘金：https://juejin.im/user/5bcab884e51d450e81091745
+郑明远的 ACM 博客：https://www.cnblogs.com/s1124yy/
