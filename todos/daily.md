@@ -1,11 +1,40 @@
 # 每天都要写日报
 
-- docker nginx mongodb redis
+- nginx mongodb
+
+- [敏捷开发](http://www.ruanyifeng.com/blog/2019/03/agile-development.html)
+- [普通人的网页配色方案](http://www.ruanyifeng.com/blog/2019/03/coloring-scheme.html)
+- [Grid 布局教程](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+
+
+
+### 2019-4-6 11:11:57
+
+- [redis入门](https://www.imooc.com/video/14324)
+  - 5种类型 `string list set hash   sort set`
+- [git tag](https://www.jianshu.com/p/cdd80dd15593)
+  - tag可以生成release
+  - tag对应一个commit id
+- [Nginx 容器教程](http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html)
+  - `docker run --rm -p 8080:80 -d --name mynx -v $PWD/html:/usr/share/nginx/html nginx`
+- [Docker 微服务教程](http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html)
+- [Node 定时器详解](http://www.ruanyifeng.com/blog/2018/02/node-event-loop.html)
+  - Node 规定，process.nextTick和Promise的回调函数，追加在本轮循环，即同步任务一旦执行完成，就开始执行它们。而setTimeout、setInterval、setImmediate的回调函数，追加在次轮循环。
+  - 事件循环六个阶段
+    1. timers
+    2. I/O callbacks
+    3. idle, prepare
+    4. poll
+    5. check
+    6. close callbacks
+  
+  七、事件循环的示例
+
 
 ### 2019-4-5 17:11:14
 
 - [写一个Koa](https://juejin.im/post/5ba48fc4e51d450e704277fa)
-- [入门 docker](https://www.imooc.com/learn/867)
+- [入门 docker](https://www.imooc.com/learn/867) ghost搭建博客
 - [Docker从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 
 ### 2019-4-4 22:57:52
