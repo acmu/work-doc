@@ -1,7 +1,12 @@
 # 每天都要写日报
 
-- nginx mongodb
+- [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650)
 - [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
+- [dart 入门](https://www.imooc.com/learn/1035)
+- [Flutter 入门](https://www.imooc.com/learn/1090)
+- [GraphQL 搭配 Koa](https://juejin.im/post/5a49e5ccf265da430d585cfd)
+
+https://www.bilibili.com/video/av24311263/?p=8
 
 ### 2019-4-7 07:36:31
 
@@ -23,7 +28,9 @@
   - same-site 不能在跨域请求中携带 cookie，减少 csrf 攻击
   - sessionStorage 即便是相同域名下的两个页面，只要它们不在同一个浏览器窗口中打开，那么它们的 sessionStorage 内容便无法共享
   - sessionStorage 可以有效对表单信息进行维护，比如刷新时，表单信息不丢失。
-- GraphQL 搭配 Koa
+- [mongodb 入门](https://www.bilibili.com/video/av24311263?from=search&seid=18225452499749612871)
+  - NoSQL 不用 SQL 语言来编写
+  - `show dbs; show collections; db.createCollection('posts'); db.posts.insert({}); db.posts.find()`
 
 ### 2019-4-6 11:11:57
 
