@@ -72,4 +72,4 @@
 
 ---
 
-<div align="center"><a href="./d1903.md">👈往期日报</a></div>
+<div align="center"><a href="./d1903.md">更多日报</a></div>
