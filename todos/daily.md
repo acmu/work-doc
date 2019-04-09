@@ -4,9 +4,29 @@
 - [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [dart 入门](https://www.imooc.com/learn/1035)
 - [Flutter 入门](https://www.imooc.com/learn/1090)
-- [GraphQL 搭配 Koa](https://juejin.im/post/5a49e5ccf265da430d585cfd)
+- [3小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
 
 https://www.bilibili.com/video/av24311263/?p=8
+
+https://www.imooc.com/video/18260
+
+
+### 2019-4-9 05:50:36
+
+- [React高级教程之高阶组件](https://www.imooc.com/learn/1075)
+  - h5标签 `header section footer article nav aside`
+  - HOC应用
+    - 代理方式 继承自React.Component (这种使用较多)
+    - 继承方式 继承自WrappedComponent
+- [Creating a React App… From Scratch](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
+  - 扩展的项目 https://github.com/Acmu/react-start
+  - webpack 配置理解
+- get new skill: `xxx site:stackoverflow.com` can search only in the site.
+
+### 2019-4-8 08:35:31
+
+- [GraphQL 搭配 Koa](https://juejin.im/post/5a49e5ccf265da430d585cfd)
+  - mongoose
 
 ### 2019-4-7 07:36:31
 

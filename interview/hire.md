@@ -17,3 +17,9 @@
 
 - docker
 - redux koa 源码
+
+我的 ID
+
+```
+Min Yuan (https://github.com/Acmu) <wen98y@gmail.com>
+```

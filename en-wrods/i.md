@@ -2,6 +2,10 @@
 
 
 - fundamental a 基本的
+- from scratch 白手起家；从头做起
+- severity vulnerability 严重漏洞
+- folk n 民间
+- boilerplate n 样板文件
 - denote v 表示
 - arbitrary a 任意的
 - respective a 分别的，各自的
