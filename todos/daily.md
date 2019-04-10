@@ -4,20 +4,26 @@
 - [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [dart 入门](https://www.imooc.com/learn/1035)
 - [Flutter 入门](https://www.imooc.com/learn/1090)
-- [3小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
+- [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
 
 https://www.bilibili.com/video/av24311263/?p=8
 
-https://www.imooc.com/video/18260
+https://redux.js.org/basics/usage-with-react#usage-with-react
 
+
+### 2019-4-10 15:37:50
+
+- 完成 高阶组件 视频
+- 完善 https://github.com/Acmu/react-start 加入 redux
+- snippets `rce impt rafcp rfcp`
 
 ### 2019-4-9 05:50:36
 
-- [React高级教程之高阶组件](https://www.imooc.com/learn/1075)
-  - h5标签 `header section footer article nav aside`
-  - HOC应用
-    - 代理方式 继承自React.Component (这种使用较多)
-    - 继承方式 继承自WrappedComponent
+- [React 高级教程之高阶组件](https://www.imooc.com/learn/1075)
+  - h5 标签 `header section footer article nav aside`
+  - HOC 应用
+    - 代理方式 继承自 React.Component (这种使用较多)
+    - 继承方式 继承自 WrappedComponent
 - [Creating a React App… From Scratch](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
   - 扩展的项目 https://github.com/Acmu/react-start
   - webpack 配置理解
@@ -31,8 +37,8 @@ https://www.imooc.com/video/18260
 ### 2019-4-7 07:36:31
 
 - [普通人的网页配色方案](http://www.ruanyifeng.com/blog/2019/03/coloring-scheme.html)
-  - https://www.materialpalette.com/deep-purple/teal
   - https://flatuicolors.com/palette/defo
+  - https://www.materialpalette.com/deep-purple/teal
   - http://www.flatuicolorpicker.com/red-rgba-color-code
   - https://coolors.co/
   - https://www.materialui.co/colors
