@@ -10,6 +10,10 @@ https://www.bilibili.com/video/av24311263/?p=8
 
 https://redux.js.org/basics/usage-with-react#usage-with-react
 
+### 2019-4-11 22:55:48
+
+- 了解 vscode task
+- 修复 [redux todo](https://redux.js.org/basics/example#action-creators)
 
 ### 2019-4-10 15:37:50
 
