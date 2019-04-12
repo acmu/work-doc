@@ -10,6 +10,11 @@ https://www.bilibili.com/video/av24311263/?p=8
 
 https://redux.js.org/basics/usage-with-react#usage-with-react
 
+### 2019-4-12 08:36:57
+
+- 完善 redux todos
+- 了解 [cra](https://facebook.github.io/create-react-app/)
+
 ### 2019-4-11 22:55:48
 
 - 了解 vscode task
