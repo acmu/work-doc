@@ -8,7 +8,24 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
-https://redux.js.org/basics/usage-with-react#usage-with-react
+
+### 2019-4-13 11:46:44
+
+- ubuntu [安装nvm](https://gist.github.com/d2s/372b5943bce17b964a79)
+  - `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+  - `nvm install v10.15.3`
+- wp re 视频
+  - grunt glup 注册任务
+  - seajs requirejs
+  - npm bower jspm
+  - webpack rollup(**tree shaking** -> suck as loadsh) browserify
+  - styled-components css in js
+  - 架构能力：预期可能出现的问题并在一开始就规避
+  - 工程架构：代码lint，不同环境排除差异，git commit预处理 项目架构：业务代码分层，更好实现功能，扩展性
+  - 网络优化
+    - 合并资源文件，减少http请求，一般并发http请求有限制，浏览器大多是8个，移动端6个
+
+2-5 finish but has error
 
 ### 2019-4-12 08:36:57
 
