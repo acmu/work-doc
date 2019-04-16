@@ -9,6 +9,14 @@
 https://www.bilibili.com/video/av24311263/?p=8
 
 
+### 2019-4-16 12:19:35
+
+- wp视频
+  - react 16 可以直接返回数组，不用总是一个根组件
+  - redux 每次都产生一个新对象，所以每次都重新计算全部react组件，但由于react的diff算法，所以效率还是很高，但如果用 vue 效率就低了
+  - mobx 和 vuex 概念类型 是 reactive 的，只有1份store，直接在原来的地方修改
+- [为什么写 super(props)](https://overreacted.io/why-do-we-write-super-props/)
+
 ### 2019-4-13 11:46:44
 
 - ubuntu [安装nvm](https://gist.github.com/d2s/372b5943bce17b964a79)
