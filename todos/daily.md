@@ -8,6 +8,19 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-17 09:27:47
+
+- 删除当前目录下所有文件 `rm -rf *`
+- 解压 ` tar -zxvf xxx.tar.gz`
+- ssr 需要解决的问题
+  - 把真正的元素，替换到模版html `<!-- app -->` 中
+  - 使服务端 store 与客户端 store 同步，加入`window.__INITIAL_STATE__`
+  - helmet 加入seo优化 `meta:description title style  link`
+- react 16 新特性
+  - componentDidCatch
+  - render 可以返回 array string
+  - RactDOM.createPortal
+  - 更好的 ssr
 
 ### 2019-4-16 12:19:35
 
@@ -16,6 +29,7 @@ https://www.bilibili.com/video/av24311263/?p=8
   - redux 每次都产生一个新对象，所以每次都重新计算全部react组件，但由于react的diff算法，所以效率还是很高，但如果用 vue 效率就低了
   - mobx 和 vuex 概念类型 是 reactive 的，只有1份store，直接在原来的地方修改
 - [为什么写 super(props)](https://overreacted.io/why-do-we-write-super-props/)
+  - 如果只写`super(props)`，在`constructor`中就不能用`this.props`
 
 ### 2019-4-13 11:46:44
 
