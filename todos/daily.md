@@ -8,6 +8,37 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-18 05:52:56
+
+- marked 解析 markdown
+- 除了 `<Link >` 跳转路由，还可以用 `this.context.router.history.push('/xxx')` 如监听onClick
+- `this.context.router.history.replace('/xxx')` 这个路由不会保存到历史记录，一般判断登陆状态，如果已登录，就 repalce ，这就保证了用户后退的时候不会后退到登陆页面，而是从哪里来，就后退到哪去，保证了正确性
+- pm2 管理进程，收集日志，自动重启
+- `curl [url]` 拿到 url 的网页字符串形式
+- `ssh-copy-id root@47.102.124.140` 生成本地密钥，
+- nginx 反向代理， 用cra， `npm start` 测试
+```
+upstream cra-demo {
+    server 127.0.0.1:3000; # 这里的端口号写你node.js运行的端口号，也就是要代理的端口号，我的项目跑在8081端口上
+    keepalive 64;
+}
+
+server {
+    listen 80; #这里的端口号是你要监听的端口号
+    server_name 47.102.124.140; # 这里是你的服务器名称，也就是别人访问你服务的ip地址或域名，可以写多个，用空格隔开
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Nginx-Proxy true;
+        proxy_set_header Connection "";
+        proxy_pass http://cra-demo; # 这里要和最上面upstream后的应用名一致，可以自定义
+    }
+}
+```
+
+
 ### 2019-4-17 09:27:47
 
 - 删除当前目录下所有文件 `rm -rf *`
