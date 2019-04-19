@@ -8,15 +8,63 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-19 09:29:14
+
+- `file-loader` 把文件（png jpg svg txt）等打包，并返回路径字符串
+- `file-loader` 与 `url-loader` 类似，但多了 `option.limit 1024(1KB)`
+- `@import './b.css';` css 引入 css
+- `postcss-loader` + `autoprefixer` plugins 自动补全 css 前缀
+- `plugin` 可以在 `webpack` 运行的某一时刻，做一些事情
+
+```
+development -> devtool: 'cheap-module-eval-source-map'
+production -> devtool: 'cheap-module-source-map'
+```
+
+- `webpack --watch` `webpack-dev-server` `node + webpack + webpack-middle-ware` 监听文件变化
+- HMR 开启方法
+
+```
+devServer -> hot: true, hotOnly: true
+plugins -> new new webpack.HotModuleReplacementPlugin()
+
+index.js:
+// 要把代码的副作用抵消，这样才不会出现2次
+if (module.hot) {
+  module.hot.accept('./n', () => {
+    document.body.removeChild(document.getElementById('num'))
+    number()
+  })
+}
+```
+
+- `@babel/polyfill` 会污染全局环境，所以写类库时，要用 [@babel/runtime](https://babeljs.io/docs/en/babel-runtime)
+- `tree shaking` 只支持 ES module `optimization: { usedExports: true }` `import { xxx }` 只加载使用到的xxx，不加载其他的。 `package.json -> sideEffects: ["*.css"]`: 不对 `.css` 文件进行 `tree shaking`
+- `webpack-merge` merge(common, conf)
+- `code splitting` 把打包分成几个 js 分别加载 `optimization: { splitChunks: { chunks: 'all' } }` [SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)
+- `import()` -> `@babel/plugin-syntax-dynamic-import` `import(/* webpackChunkName:"lodash" */ 'lodash').then( ... )`
+- 提高js利用率，控制台中 `ctrl + shift + p  -> show coverage` 使用更多的 `import()` 并增加 `prefetching/preloading` -> `import( /* webpackPrefech: true */ './click.js).then( ... )`
+- css split `mini-css-extract-plugin` 不支持 HMR 所以用在线上环境中
+- `output: { filename: '[name].[contenthash].js', chunkFilename: '[name].[contenthash].js' }` 浏览器缓存
+- `runtimeChunk: { name: 'runtime' }` 把 minafest 抽离出来，使得老版本 webpack `[content]` 内容不变一定相同
+- `Shimming` `new webpack.ProvidePlugin({ $: 'jquery' })`
+
+
+
+
+[前端开发者必备的Nginx知识](https://juejin.im/post/5c85a64d6fb9a04a0e2e038c)
+
+
 ### 2019-4-18 05:52:56
 
 - marked 解析 markdown
-- 除了 `<Link >` 跳转路由，还可以用 `this.context.router.history.push('/xxx')` 如监听onClick
+- 除了 `<Link >` 跳转路由，还可以用 `this.context.router.history.push('/xxx')` 如监听 onClick
 - `this.context.router.history.replace('/xxx')` 这个路由不会保存到历史记录，一般判断登陆状态，如果已登录，就 repalce ，这就保证了用户后退的时候不会后退到登陆页面，而是从哪里来，就后退到哪去，保证了正确性
 - pm2 管理进程，收集日志，自动重启
 - `curl [url]` 拿到 url 的网页字符串形式
-- `ssh-copy-id root@47.102.124.140` 生成本地密钥，
-- nginx 反向代理， 用cra， `npm start` 测试
+- `ssh-copy-id root@47.102.124.140` 生成本地密钥，登陆 remote server 就可以不用每次都输入密码
+- nginx 反向代理， 用 cra， `npm start` 测试
+
 ```
 upstream cra-demo {
     server 127.0.0.1:3000; # 这里的端口号写你node.js运行的端口号，也就是要代理的端口号，我的项目跑在8081端口上
@@ -38,15 +86,14 @@ server {
 }
 ```
 
-
 ### 2019-4-17 09:27:47
 
 - 删除当前目录下所有文件 `rm -rf *`
-- 解压 ` tar -zxvf xxx.tar.gz`
+- 解压 `tar -zxvf xxx.tar.gz`
 - ssr 需要解决的问题
-  - 把真正的元素，替换到模版html `<!-- app -->` 中
+  - 把真正的元素，替换到模版 html `<!-- app -->` 中
   - 使服务端 store 与客户端 store 同步，加入`window.__INITIAL_STATE__`
-  - helmet 加入seo优化 `meta:description title style  link`
+  - helmet 加入 seo 优化 `meta:description title style link`
 - react 16 新特性
   - componentDidCatch
   - render 可以返回 array string
@@ -55,16 +102,16 @@ server {
 
 ### 2019-4-16 12:19:35
 
-- wp视频
+- wp 视频
   - react 16 可以直接返回数组，不用总是一个根组件
-  - redux 每次都产生一个新对象，所以每次都重新计算全部react组件，但由于react的diff算法，所以效率还是很高，但如果用 vue 效率就低了
-  - mobx 和 vuex 概念类型 是 reactive 的，只有1份store，直接在原来的地方修改
+  - redux 每次都产生一个新对象，所以每次都重新计算全部 react 组件，但由于 react 的 diff 算法，所以效率还是很高，但如果用 vue 效率就低了
+  - mobx 和 vuex 概念类型 是 reactive 的，只有 1 份 store，直接在原来的地方修改
 - [为什么写 super(props)](https://overreacted.io/why-do-we-write-super-props/)
   - 如果只写`super(props)`，在`constructor`中就不能用`this.props`
 
 ### 2019-4-13 11:46:44
 
-- ubuntu [安装nvm](https://gist.github.com/d2s/372b5943bce17b964a79)
+- ubuntu [安装 nvm](https://gist.github.com/d2s/372b5943bce17b964a79)
   - `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
   - `nvm install v10.15.3`
 - wp re 视频
@@ -74,9 +121,9 @@ server {
   - webpack rollup(**tree shaking** -> suck as loadsh) browserify
   - styled-components css in js
   - 架构能力：预期可能出现的问题并在一开始就规避
-  - 工程架构：代码lint，不同环境排除差异，git commit预处理 项目架构：业务代码分层，更好实现功能，扩展性
+  - 工程架构：代码 lint，不同环境排除差异，git commit 预处理 项目架构：业务代码分层，更好实现功能，扩展性
   - 网络优化
-    - 合并资源文件，减少http请求，一般并发http请求有限制，浏览器大多是8个，移动端6个
+    - 合并资源文件，减少 http 请求，一般并发 http 请求有限制，浏览器大多是 8 个，移动端 6 个
 
 2-5 finish but has error
 
