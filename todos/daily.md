@@ -8,6 +8,16 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-20 10:22:06
+
+- 编写第三方库 `output: { libraryTarget: 'umd', library: 'lib' }` `script:src` 时挂在 `window` 上，叫 `lib`
+- `externals: ["lodash"]` 忽略这个库的打包
+- PWA 可以用 `workbox-webpack-plugin` 插件 `new WorkboxPlugin.GenerateSW({})` 再加上业务代码 `navigator.serviceWorker.register('./server-worker.js')`
+- `add-asset-html-webpack-plugin` 添加全局变量 打包第三方库 dll `webpack.DllReferencePlugin` 
+- 多进程打包 `thread-loader happy-pack`
+- 多页面打包，配置多个 `new HtmlWebpackPlugin({ template, filename, chunks })`
+- loader 实现国际化 实现异常捕获
+
 ### 2019-4-19 09:29:14
 
 - `file-loader` 把文件（png jpg svg txt）等打包，并返回路径字符串
@@ -39,21 +49,18 @@ if (module.hot) {
 ```
 
 - `@babel/polyfill` 会污染全局环境，所以写类库时，要用 [@babel/runtime](https://babeljs.io/docs/en/babel-runtime)
-- `tree shaking` 只支持 ES module `optimization: { usedExports: true }` `import { xxx }` 只加载使用到的xxx，不加载其他的。 `package.json -> sideEffects: ["*.css"]`: 不对 `.css` 文件进行 `tree shaking`
+- `tree shaking` 只支持 ES module `optimization: { usedExports: true }` `import { xxx }` 只加载使用到的 xxx，不加载其他的。 `package.json -> sideEffects: ["*.css"]`: 不对 `.css` 文件进行 `tree shaking`
 - `webpack-merge` merge(common, conf)
 - `code splitting` 把打包分成几个 js 分别加载 `optimization: { splitChunks: { chunks: 'all' } }` [SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)
 - `import()` -> `@babel/plugin-syntax-dynamic-import` `import(/* webpackChunkName:"lodash" */ 'lodash').then( ... )`
-- 提高js利用率，控制台中 `ctrl + shift + p  -> show coverage` 使用更多的 `import()` 并增加 `prefetching/preloading` -> `import( /* webpackPrefech: true */ './click.js).then( ... )`
+- 提高 js 利用率，控制台中 `ctrl + shift + p -> show coverage` 使用更多的 `import()` 并增加 `prefetching/preloading` -> `import( /* webpackPrefech: true */ './click.js).then( ... )`
 - css split `mini-css-extract-plugin` 不支持 HMR 所以用在线上环境中
 - `output: { filename: '[name].[contenthash].js', chunkFilename: '[name].[contenthash].js' }` 浏览器缓存
 - `runtimeChunk: { name: 'runtime' }` 把 minafest 抽离出来，使得老版本 webpack `[content]` 内容不变一定相同
 - `Shimming` `new webpack.ProvidePlugin({ $: 'jquery' })`
+- `imports-loader` 可以改变模块中的 this
 
-
-
-
-[前端开发者必备的Nginx知识](https://juejin.im/post/5c85a64d6fb9a04a0e2e038c)
-
+* [前端开发者必备的 Nginx 知识](https://juejin.im/post/5c85a64d6fb9a04a0e2e038c)
 
 ### 2019-4-18 05:52:56
 
