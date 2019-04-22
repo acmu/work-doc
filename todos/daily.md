@@ -8,6 +8,14 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-22 11:11:15
+
+- 搭建[react开发环境](https://github.com/Acmu/transport-man)
+
+### 2019-4-21 16:01:01
+
+- [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
+
 ### 2019-4-20 10:22:06
 
 - 编写第三方库 `output: { libraryTarget: 'umd', library: 'lib' }` `script:src` 时挂在 `window` 上，叫 `lib`
