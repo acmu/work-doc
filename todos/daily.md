@@ -8,6 +8,14 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-24 12:54:14
+
+- 完成前后端登陆功能，退出登陆
+
+### 2019-4-23 09:49:17
+
+- rhl 还不支持 hook
+
 ### 2019-4-22 11:11:15
 
 - 搭建[react开发环境](https://github.com/Acmu/transport-man)
