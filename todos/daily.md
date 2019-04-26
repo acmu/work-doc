@@ -8,9 +8,14 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-26 13:22:55
+
+- 完成客户模块
+
 ### 2019-4-24 12:54:14
 
 - 完成前后端登陆功能，退出登陆
+- `export default {}` -> `import A from 'xx'` 另外 `export const a` -> `import { a } from 'xx'` 只能这样对应，不能混着用
 
 ### 2019-4-23 09:49:17
 
