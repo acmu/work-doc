@@ -11,11 +11,16 @@ https://www.bilibili.com/video/av24311263/?p=8
 ### 2019-4-30 22:30:00
 
 - 完成物流系统
+- `dangerouslySetInnerHTML={{__html: '<h1>sfdf</h1>'}}` 不转义
+- 推荐 `setState(previousState => {})` 里面用函数，是异步获取数据，所以 `e.target.value` 会不能用，解决办法是用闭包，在外面把 `value` 保存，之后在传入 `setState` 里的函数
+- jQuery 命令式 React 声明式
+- 当组件的 `state` 或 `props` 发生改变时， `render` 函数就会重新执行； 当父组件 `render` 函数执行时，子组件 `render` 也会重新执行
+- `ref={(ipt) => {this.input = ipt}}`
 
 ### 2019-4-29 15:21:31
 
 - mac 中 `open .` 打开目录， win 中用 `start .` 还可以 `start ..`
-- cmd 清屏 `cls  OR  clear`
+- cmd 清屏 `cls OR clear`
 
 ### 2019-4-26 13:22:55
 
@@ -33,7 +38,7 @@ https://www.bilibili.com/video/av24311263/?p=8
 
 ### 2019-4-22 11:11:15
 
-- 搭建[react开发环境](https://github.com/Acmu/transport-man)
+- 搭建[react 开发环境](https://github.com/Acmu/transport-man)
 
 ### 2019-4-21 16:01:01
 
@@ -44,7 +49,7 @@ https://www.bilibili.com/video/av24311263/?p=8
 - 编写第三方库 `output: { libraryTarget: 'umd', library: 'lib' }` `script:src` 时挂在 `window` 上，叫 `lib`
 - `externals: ["lodash"]` 忽略这个库的打包
 - PWA 可以用 `workbox-webpack-plugin` 插件 `new WorkboxPlugin.GenerateSW({})` 再加上业务代码 `navigator.serviceWorker.register('./server-worker.js')`
-- `add-asset-html-webpack-plugin` 添加全局变量 打包第三方库 dll `webpack.DllReferencePlugin` 
+- `add-asset-html-webpack-plugin` 添加全局变量 打包第三方库 dll `webpack.DllReferencePlugin`
 - 多进程打包 `thread-loader happy-pack`
 - 多页面打包，配置多个 `new HtmlWebpackPlugin({ template, filename, chunks })`
 - loader 实现国际化 实现异常捕获
