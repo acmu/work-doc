@@ -8,9 +8,14 @@
 
 https://www.bilibili.com/video/av24311263/?p=8
 
+### 2019-4-30 22:30:00
+
+- 完成物流系统
+
 ### 2019-4-29 15:21:31
 
 - mac 中 `open .` 打开目录， win 中用 `start .` 还可以 `start ..`
+- cmd 清屏 `cls  OR  clear`
 
 ### 2019-4-26 13:22:55
 
