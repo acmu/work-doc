@@ -6,7 +6,84 @@
 - [Flutter 入门](https://www.imooc.com/learn/1090)
 - [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
 
-https://www.bilibili.com/video/av24311263/?p=8
+### 2019-5-1 11:14:57
+
+- `componentWillReceiveProps` 一个组件要从父组件接收参数，只要父组件的 `render` 重新函数执行了，子组件的这个生命周期函数就会执行
+- `shuoldComponentUpdate(nextProps, nextState)` 当父组件的 `render` 执行时，子组件的 `render` 也会执行，所以可以用这个来判断是否真的要执行，以提升性能
+
+```css
+.hide {
+  animation: hide-item 2s ease-in forwards;
+}
+
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+  50% {
+    opacity: 0.5;
+    color: green;
+  }
+  100% {
+    opacity: 0;
+    color: blue;
+  }
+}
+```
+
+- css 动画中 `forwards` 会保存最后一帧的样式，如果不加，则还是原来的样式
+
+```css
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.fade-enter-done {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+```
+
+- `react-transition-group` 的 `CSSTransition` 使用： `classNames='fade'`
+- `createStore` 要传入 `reducer` ，之后可以 `store.getState()` 获取数据
+- `reducer` 是一个函数，有 2 个参数：原来的 `state`，和 `action`。返回值是新的 `state`
+- `store.dispatch(action)` 接收到 `action` 会自动调用 `reducer`
+- `store.subscribe(f => f)` 只要 store 改变，函数就会执行
+
+```js
+// immediate 立即执行的
+let x = 1 + 2;
+
+// foo is a thunk 没有立即执行，是以后调用的
+let foo = () => 1 + 2;
+```
+
+- `redux-thunk` 可以把异步代码放到 `action` 中，使 `actionCreator` 可以返回函数： `(dispath, getState) => {}`，即 `action` 可以是函数了，不是只能对象
+- `redux` 中间件指 `action` 和 `store` 之间
+- 引入 `redux-saga` 之后 `store.dispath(action)` 时，除了 `reducer` 会拿到 `action` 外，`sagas.js` 的 `generator` 中也可以拿到 `action`
+- `sagas.js` `export default generator 函数`
+  - `takyEvery(actionType, f => f)` 当 dispatch actionType 的 action 时，会调用 f 函数，f 函数里可以用 `put(action)` 来派发 `action` 因为 `sagas.js` 没有 `store` 所以只能用这种方法改变 `store`
+- [引入](https://meyerweb.com/eric/tools/css/reset/) `reset.css` 使各个浏览器样式兼容
 
 ### 2019-4-30 22:30:00
 
