@@ -1,10 +1,46 @@
 # 每天都要写日报
 
-- [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650)
-- [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
-- [dart 入门](https://www.imooc.com/learn/1035)
-- [Flutter 入门](https://www.imooc.com/learn/1090)
-- [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
+- [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html) [dart 入门](https://www.imooc.com/learn/1035) [Flutter 入门](https://www.imooc.com/learn/1090) [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
+- [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & practice `context` & SSR Next & Ts & Vue2.5 学习
+
+* [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
+
+### 2019-5-2 00:21:26
+
+- `Tagged templates` [标签模版](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates) 第一个参数是字符串数组，其余的是表达式
+- 既然用了 `redux` 那么能存到 `redux` 里的，就都要存到 `redux` 里，这对后期维护很好
+- `combineReducers` 后， `stateToProps` 要多加一层才能获取到数据，但 `reducer` 不需要多加一层，就可以直接修改这一层下面的数据
+- `immutable` 确保 `reducer` 无副作用，即不会修改原始 `store`
+- `redux-immutable` 让 `store` 由一个普通对象变成 `immutable` 类型
+- `stateless component` 写函数，要在 `stateless component` 外面写 `const foo = () => {}`
+- 要使得 `redux` 中，除了 `store` ，其他底下的类型都是 `immutable` 的
+- `fromJS` 是深层的，会把每一层都变成 `immutable` 的
+- `const mapDispatchToProps = (dispatch, ownProps) => {}` `function mapStateToProps(state, ownProps?)` 所以如果 `Dispatch` 要获取 store 数据，只能从 `mapStateToProps` 当参数传过来
+- `immutable` 的 `set OR setIn` 设置 1 个值， `merge({})` 设置多个值
+- `react-redux` 的 `Provider BrowserRouter` 下面只能有一个元素
+
+```js
+store.merge({
+  todoList: fromJS(action.todoList) // 这样写才对，进入 store 前一定变成 immutable 的
+});
+```
+
+- `PureComponent` 自带了 `shouldComponentUpdate()` 优化 且一定要和 `immutable` 结合使用，否则会有问题
+- `styled-components` 要使用 `ref` 时，用 `innerRef` 代替
+- `react-router-dom` 有 `withRouter` 方法，可以给组件拿到路由数据
+- react-loadable 可以动态加载组件 js 代码
+- 1 个 tcp 连接可以对应多个 http 请求，并且 http2 里面 1 个 tcp 连接上，http 的请求可以并发
+- 跨域的请求其实是已经发送到服务器了的，并且服务器也响应了，只是到了浏览器，会检查`Access-Control-Allow-Origin` 如果没有这个响应头，浏览器会忽略响应，并报错。所以说这是浏览器的同源策略，即你用 `curl` 的话，是不会出现跨域这一说的。
+- 有些跨域会发送预请求，方法是 `OPTIONS` 如果合理再去发送跨域的方法
+- 跨域 CORS 默认允许的方法`get post head`，默认允许的`Content-Type` `text/plain multipart/form-data application/x-www-form-urlencoded` 所以服务端可以响应`OPTIONS` 来响应是否让浏览器跨域
+- no-catch 有缓存，但是要向服务器协商确认， no-store 不缓存
+- catch-control 是客户端缓存，只要 304 就直接拿浏览器的缓存数据，不会管服务器的返回数据
+- 302 暂时跳转； 301 永久跳转
+- `Content-Security-Policy` 即 CSP 可以现在外链的 src 路径，或 inline script
+- `Vary: X-Test-Cache` 当多个请求时，除了 url 相同 `X-Test-Cache` 头在缓存中的值也相同时，才会缓存
+- 只有私钥才能解密出公钥加密过的数据，公钥任何人都可以拿到，私钥只放在服务器上。
+  - 公钥 私钥 使用在握手过程中，传输的是`加密字符串`，最后基于`加密字符串`加密数据，并且只有 客户端 服务端 知道`加密字符串` 其他人不知道
+- chorme 并发 TCP 连接 6 个
 
 ### 2019-5-1 11:14:57
 
@@ -83,7 +119,7 @@ let foo = () => 1 + 2;
 - 引入 `redux-saga` 之后 `store.dispath(action)` 时，除了 `reducer` 会拿到 `action` 外，`sagas.js` 的 `generator` 中也可以拿到 `action`
 - `sagas.js` `export default generator 函数`
   - `takyEvery(actionType, f => f)` 当 dispatch actionType 的 action 时，会调用 f 函数，f 函数里可以用 `put(action)` 来派发 `action` 因为 `sagas.js` 没有 `store` 所以只能用这种方法改变 `store`
-- [引入](https://meyerweb.com/eric/tools/css/reset/) `reset.css` 使各个浏览器样式兼容
+- [引入](https://meyerweb.com/eric/tools/css/reset/) `reset.css` 使各个浏览器样式兼容 或 [normalize.css](https://github.com/necolas/normalize.css/)
 
 ### 2019-4-30 22:30:00
 
@@ -92,7 +128,7 @@ let foo = () => 1 + 2;
 - 推荐 `setState(previousState => {})` 里面用函数，是异步获取数据，所以 `e.target.value` 会不能用，解决办法是用闭包，在外面把 `value` 保存，之后在传入 `setState` 里的函数
 - jQuery 命令式 React 声明式
 - 当组件的 `state` 或 `props` 发生改变时， `render` 函数就会重新执行； 当父组件 `render` 函数执行时，子组件 `render` 也会重新执行
-- `ref={(ipt) => {this.input = ipt}}`
+- `ref={(ipt) => {this.input = ipt}}` ref 的使用
 
 ### 2019-4-29 15:21:31
 
@@ -244,8 +280,6 @@ server {
   - 工程架构：代码 lint，不同环境排除差异，git commit 预处理 项目架构：业务代码分层，更好实现功能，扩展性
   - 网络优化
     - 合并资源文件，减少 http 请求，一般并发 http 请求有限制，浏览器大多是 8 个，移动端 6 个
-
-2-5 finish but has error
 
 ### 2019-4-12 08:36:57
 
