@@ -5,6 +5,10 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-5 15:38:02
+
+- 找到一些 chrome [插件](https://www.bilibili.com/video/av43178936)
+
 ### 2019-5-2 00:21:26
 
 - `Tagged templates` [标签模版](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates) 第一个参数是字符串数组，其余的是表达式
