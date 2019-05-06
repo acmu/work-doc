@@ -5,6 +5,54 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-6 13:08:40
+
+- vue 视频 看到 3-2
+  - `new Vue({el: '', data: {}})` 传入的是 Vue 实例配置项
+  - 普通的是 MVP 设计模式，如 jQ，presenter 是中转层，有大量 dom 操作，处理 view 和 model；而 mvvm 层，只需要编写 m 和 v 就够了，vm 是 vue 提供的
+  - 父向子传值 `v-bind` 和 `props` 接收，子向父传值 `this.$emit()` 触发事件，父组件监听。 `v-bind=:  v-on=@  记法 i对应: o对应@`
+  - `beforeMount` 页面还没有渲染， `mounted` 页面渲染完成
+  - vue 共 11 个生命周期函数，除了常用的8个 `create mount destory update
+- 调教 sublime (只当一个简单编辑器使用， 真不如 vsc 好用)
+
+tool > developer > new snippet
+
+```xml
+<snippet>
+  <content><![CDATA[
+console.log(${1:xiou})
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>clg</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>
+```
+
+setting
+
+```json
+{
+  "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+  "font_face": "Microsoft YaHei Mono",
+  "font_size": 14,
+  "theme": "Default.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "tab_size": 2,
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true
+}
+```
+
+perference > keybinding
+
+```json
+[
+  { "keys": ["shift+alt+f"], "command": "reindent" },
+  { "keys": ["ctrl+s"], "command": "save_all" }
+]
+```
+
 ### 2019-5-5 15:38:02
 
 - 找到一些 chrome [插件](https://www.bilibili.com/video/av43178936)
