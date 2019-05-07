@@ -5,9 +5,20 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-7 10:52:38
+
+- vue 视频 看到 7-3
+- `computed` 计算属性会缓存，只有它依赖的属性改变时，它才会重新计算
+- vue 对于数组会响应7个方法 `push pop shift unshift splice sort reverse` 或直接改变引用，也可以响应视图
+- `<template /> === <Fragment />`
+- 动态组件 `<component :is='type'></component>` `v-once` 指令放入内存中，提高性能
+- css动画 `fade-enter fade-enter-active fade-enter-to & fade-leave fade-leave-active fade-leave-to`
+- js动画，提供了钩子 `@before-enter(el) @enter(el, done) @after-enter(el) @before-leave(el) @leave(el, done) @after-leave(el)`
+- `reset.css` 重置浏览器样式 `border.css` 修复移动端1px问题 `npm i -D fastclick` 解决移动端click事件可能会有300毫秒延迟问题
+
 ### 2019-5-6 13:08:40
 
-- vue 视频 看到 3-2
+- vue 视频 看到 3-4
   - `new Vue({el: '', data: {}})` 传入的是 Vue 实例配置项
   - 普通的是 MVP 设计模式，如 jQ，presenter 是中转层，有大量 dom 操作，处理 view 和 model；而 mvvm 层，只需要编写 m 和 v 就够了，vm 是 vue 提供的
   - 父向子传值 `v-bind` 和 `props` 接收，子向父传值 `this.$emit()` 触发事件，父组件监听。 `v-bind=:  v-on=@  记法 i对应: o对应@`
