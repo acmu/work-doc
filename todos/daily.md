@@ -5,6 +5,11 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-8 17:49:29
+
+- 写论文 day1
+- 学习Election
+
 ### 2019-5-7 10:52:38
 
 - vue 视频 看到 7-3
