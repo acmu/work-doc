@@ -5,6 +5,17 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-11 12:38:11
+
+- 在指定目录下生成ssh公钥和私钥 `ssh-keygen -t rsa -C "s1124yy@qq.com"` 之后可以自定义文件路径，`ssh -T git@gitee.com`测试连接
+- `git config --list`查看设置项
+```
+git config --global user.name Yuan # 全局
+git config --global user.email wen98y@gmail.com
+
+git config user.email s1124yy@qq.com
+```
+
 ### 2019-5-8 17:49:29
 
 - 写论文 5000 字
