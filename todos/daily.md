@@ -5,6 +5,13 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-12 20:56:50
+
+- dart是面向对象的语言
+- ss的PAC模式：只在固定的一些网站翻墙，全局模式：所有网站全翻
+- dart内置类型：`Number String Boolean List Map Runes Symbols`
+- [vsc快捷键](https://www.cnblogs.com/bindong/p/6045957.html) `Ctrl+Shift+O 或 Ctrl+P @`类的变量或方法
+
 ### 2019-5-11 12:38:11
 
 - 在指定目录下生成ssh公钥和私钥 `ssh-keygen -t rsa -C "s1124yy@qq.com"` 之后可以自定义文件路径，`ssh -T git@gitee.com`测试连接
