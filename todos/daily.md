@@ -5,6 +5,14 @@
 
 * [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
 
+### 2019-5-15 20:34:48
+
+- [react-use](https://github.com/streamich/react-use) 一些通用的hooks
+- ref 使用 `this.demo=React.createRef() + ref={this.demo}`。 ref不能在`Functional Component`上使用，如果ref加在类上，得到的是一个类的对象
+- 在`didMount`中发ajax，因为你如果在这之前发，有可能提前完成，导致在还没mount的组件setState，这会报错
+- Most Common Use Case For `constructor`: Setting up state, creating refs and method binding.
+- `getSnapshotBeforeUpdate(prevProps, prevState)` 在render后，DOM更新前，看`prevProps, prevState this.state, this.props`最后一眼，并返回 null 或一个对象给`componentDidUpdate(prevProps, prevState, snapshot)`
+
 ### 2019-5-14 22:35:54
 
 - 完成论文
