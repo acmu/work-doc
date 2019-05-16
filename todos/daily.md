@@ -3,7 +3,18 @@
 - [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html) [dart 入门](https://www.imooc.com/learn/1035) [Flutter 入门](https://www.imooc.com/learn/1090) [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & practice `context` & SSR Next & Ts & Vue2.5 学习
 
-* [16 生命周期函数使用](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
+### 2019-5-16 11:29:23
+
+- 预先根据图片宽高比，占位，防止下方内容抖动
+```css
+.wrapper
+  overflow: hidden
+  width: 100%
+  height: 0
+  padding-bottom: 31.5%
+/* 据图片宽高比是 31.5% */
+```
+- `keep-alive`标签把router放入内存，这里会多出`activated & deactivated`生命周期函数，当重新显示或隐藏时会调用这个，不会多次调用`mounted`
 
 ### 2019-5-15 20:34:48
 
