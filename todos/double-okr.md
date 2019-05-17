@@ -1,13 +1,22 @@
 # 双月 OKR
 
-### 3 - 4
+`(n)`代表分数，满分是 10 分
 
-- express koa egg
-- finish css book
-- redux source
-- react doc & hook
+### 5 月 - 6 月
 
-## 1 年规划
+- 深入 React，源码，SSR，Hooks
+- 每周一篇技术文档产出
+- 复习《挑战程序设计》 做一些算法题
+
+### 3 月 - 4 月
+
+- express koa egg (5)
+- finish css book (2)
+- redux source (7)
+- react doc & hook (5)
+
+## 2019 年 - 2020 年
 
 - 每天持续学习，进击阿里 p6 p7 水平
-- 要有技术沉淀，多写总结文档，参与github开源项目
+- 要有技术沉淀，多写总结文档
+- 参与 github 开源项目
