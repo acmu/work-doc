@@ -1,7 +1,15 @@
 # 每天都要写日报
 
-- [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html) [dart 入门](https://www.imooc.com/learn/1035) [Flutter 入门](https://www.imooc.com/learn/1090) [3 小时速成 Vue2.x 核心技术](https://www.imooc.com/learn/1091)
-- [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & practice `context` & SSR Next & Ts & Vue2.5 学习
+- [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
+- [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
+
+### 2019-5-18 11:26:48
+
+- react hook 文档
+  - `useEffect` 返回一个函数来指定如何“清除”副作用，它在FC渲染后执行effect操作，它传入的参数在每次渲染是都是新的。
+  - React 使用 `Object.is` 比较算法 来比较 state
+- 看到 FAQ -> [从 Class 迁移到 Hook](https://react.docschina.org/docs/hooks-faq.html#from-classes-to-hooks)
+
 
 ### 2019-5-16 11:29:23
 
