@@ -3,6 +3,10 @@
 - [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 
+### 2019-5-19 15:39:49
+
+- [复习了简单DP](https://juejin.im/post/5ce0f22a6fb9a07ef16152ea)
+
 ### 2019-5-18 11:26:48
 
 - react hook 文档
