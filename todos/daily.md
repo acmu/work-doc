@@ -3,6 +3,10 @@
 - [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 
+### 2019-5-22 22:41:09
+
+- [通用前端组件](https://juejin.im/post/5c02142fe51d4511be77aad7)
+
 ### 2019-5-19 15:39:49
 
 - [复习了简单DP](https://juejin.im/post/5ce0f22a6fb9a07ef16152ea)
