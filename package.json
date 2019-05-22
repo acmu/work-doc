@@ -1,0 +1,11 @@
+{
+  "name": "work-doc",
+  "version": "1.0.0",
+  "description": "记录学习",
+  "scripts": {
+    "d": "git add . && git commit -m \"update daily\" && git push"
+  },
+  "keywords": ["daily", "docs"],
+  "author": "Zmy",
+  "license": "ISC"
+}
