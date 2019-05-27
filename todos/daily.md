@@ -3,6 +3,18 @@
 - [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 
+### 2019-5-27 23:11:20
+
+- [我们不背诵 API，只实现 API](https://juejin.im/post/5ce7cc2c6fb9a07ecb0b8352)
+  - 实际上，compose 和 pipe 的差别只在于调用顺序的不同
+```js
+// compose
+fn1(fn2(fn3(fn4(args))))
+	
+// pipe
+fn4(fn3(fn2(fn1(args))))
+```
+
 ### 2019-5-22 22:41:09
 
 - [通用前端组件](https://juejin.im/post/5c02142fe51d4511be77aad7)
