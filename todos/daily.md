@@ -3,6 +3,12 @@
 - [nginx 入门](https://www.bilibili.com/video/av34537494?from=search&seid=10057962381467933650) [Docker 从入门到实践](https://docker_practice.gitee.io/image/pull.html)
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 
+### 2019-5-28 00:07:27
+
+- [你本可以少写些if-else](https://juejin.im/post/5cead18df265da1bc552405b)
+  - 用对象（或Map）配置缓解流程的复杂度
+- 学习[flutter基础](https://www.imooc.com/video/18529)
+
 ### 2019-5-27 23:11:20
 
 - [我们不背诵 API，只实现 API](https://juejin.im/post/5ce7cc2c6fb9a07ecb0b8352)
