@@ -4,9 +4,18 @@
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 - **进程与线程的区别** 可以看《node深入浅出》
 
+### 2019-5-31 13:43:53
+
+- DAO层叫做数据访问层，是Data Access Object，属于一种比较底层，比较基础的操作，具体到对于某个表、某个实体的增删改查
+- 因为 `StatelessWidget` 中数据是不可变的，所以这里的数据要使用 `final` 修饰
+
 ### 2019-5-30 00:13:53
 
 - 疯狂入门flutter
+```
+安装依赖时，若出现 `Waiting for another flutter command to release the startup lock`问题，可以使用命令 `flutter clean` 最后再执行 `flutter packages get` 就可以继续安装了。
+```
+- android studio `alt + enter` 显示灯泡提示
 
 ### 2019-5-28 00:07:27
 
