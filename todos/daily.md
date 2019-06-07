@@ -4,10 +4,15 @@
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 - **进程与线程的区别** 可以看《node深入浅出》
 
+### 2019-6-8 01:05:31
+
+- 临近毕业，有些迷茫，所以回归看书，css世界 准备看完
+
 ### 2019-6-1 23:08:54
 
 - `Expend`垂直方向充满，`FractionallySizedBox`水平方向充满
+- `Symbom.hasInstance` 可以决定 `instanceof` 的返回值
+- `a.b` 中的 `b` 是否可以改变取决于 `Object.defineProperty` 中的 `configurable` 和 `writable`
 
 
-
-<div align="center"><a href="./d1903.md">更多日报</a></div>
+<div align="center"><a href="./d1905.md">更多日报</a></div>
