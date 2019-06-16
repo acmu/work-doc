@@ -4,6 +4,20 @@
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 - **进程与线程的区别** 可以看《node深入浅出》
 
+
+### 2019-6-16 09:39:23
+
+```
+STAR法则：
+S：situation，具体的业务背景
+
+T：task，你的任务有哪些
+
+A：action，你采取了哪些行动
+
+R：result，最终结果如何
+```
+
 ### 2019-6-10 13:03:30
 
 - 最佳可访问性隐藏，可优化SEO且不会显示
