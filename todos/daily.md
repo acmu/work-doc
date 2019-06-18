@@ -4,6 +4,10 @@
 - [redux-actions](https://github.com/redux-utilities/redux-actions) [ducks-modular-redux](https://github.com/erikras/ducks-modular-redux) redux-saga `bindActionCreators` & SSR Next & ts
 - **进程与线程的区别** 可以看《node深入浅出》
 
+### 2019-6-18 23:34:36
+
+- quokka 插件用了一下
+- parcel & travis ci 入门
 
 ### 2019-6-17 23:16:08
 
